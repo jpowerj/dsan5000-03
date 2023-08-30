@@ -1,6 +1,5 @@
 ---
 title: "DSAN 5000, Section 03 (Wednesdays)"
-author: "Test"
 listing:
   sort-ui: false
   filter-ui: false
