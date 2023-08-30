@@ -5,7 +5,7 @@ project:
 website:
   title: ""
   sidebar:
-    title: "DSAN 5000 Section 03 (Wednesdays, 3:30pm-6pm)<br><span class=\"subtitle\">Fall 2023, Georgetown</span><br><span class=\"subtitle\">Prof. Jeff <a href=\"mailto:jj1088@georgetown.edu\" target=\"_blank\"><i class=\"bi bi-envelope-at ps-1 pe-1\"></i></a><a href=\"https://github.com/jpowerj\" target=\"_blank\"><i class=\"bi bi-github ps-1\"></i></a></span>"
+    title: "DSAN 5000 Section 03 (Wednesdays, 3:30pm-6pm)<br><span class=\"subtitle\">Car Barn 203</span><br><span class=\"subtitle\">Fall 2023, Georgetown</span><br><span class=\"subtitle\">Prof. Jeff <a href=\"mailto:jj1088@georgetown.edu\" target=\"_blank\"><i class=\"bi bi-envelope-at ps-1 pe-1\"></i></a><a href=\"https://github.com/jpowerj\" target=\"_blank\"><i class=\"bi bi-github ps-1\"></i></a></span>"
     contents:
       - href: "https://jfh.georgetown.domains/dsan5000/"
         text: "<i class=\"bi bi-arrow-left\" style=\"margin-right: 4px\"></i>Main Course Page"
