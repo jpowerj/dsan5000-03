@@ -1,0 +1,27 @@
+---
+title: "Week 2 Summary: Data Science Fundamentals and Workflow"
+date: 2023-08-30
+date-format: full
+lecnum: 2
+categories:
+  - "Class Summaries"
+---
+
+::: {.callout-note}
+
+# Today's Links
+
+* <a class="icon-link" href="https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/slides/computer-fundamentals/notes.html" target="_blank"><i class="bi bi-journals pe-1"></i>Week 2 Lecture Notes</a>
+* <a class="icon-link" href="https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/slides/demo-gu-domains-CLI/notes.html" target="_blank"><i class="bi bi-laptop pe-1"></i>Lab 1 Home</a>
+
+:::
+
+## Computer Fundamentals
+
+* Memory: RAM vs. Hard drive
+* Where does the data live?
+* Unix vs. Linux vs. Mac vs. Windows
+* Filesystem: / as root, ~ as home dir, . as current dir, .. as dir one level above
+
+## Coding Fundamentals
+

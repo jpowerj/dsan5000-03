@@ -7,6 +7,678 @@
     "text": "Today’s Links\n\n\n\n\nWeek 2 Lecture Notes\nLab 1 Home\n\n\n\nToday’s Planned Schedule:\n\n\n\n\n\n\n\n\n\n\n\n\nStart\nEnd\nTopic\nSlides\nNotes\n\n\n\n\nLecture\n3:30pm\n3:35pm\n[About Me]\n\n\n\n\n\n3:35pm\n3:50pm\nComputer Fundamentals\n\n\n\n\n\n3:50pm\n4:05pm\nCoding Fundamentals\n\n\n\n\n\n4:05pm\n4:20pm\nHTML and CSS\n\n\n\n\n\n4:20pm\n4:35pm\nObjects and Classes\n\n\n\n\n\n4:35pm\n4:50pm\nQuiz 1.1 (Canvas)\n\n\n\n\nBreak!\n4:50pm\n5:00pm\n\n\n\n\n\nLab\n5:00pm\n5:25pm\nLab 1 Part I: Coding Demonstration\n\n\n\n\n\n5:25pm\n5:50pm\nLab 1 Part II: HTML/CSS Demonstration\n\n\n\n\n\n5:50pm\n6:00pm\nLab 1 Assignment Overview"
   },
   {
+    "objectID": "week02-summary.html",
+    "href": "week02-summary.html",
+    "title": "Week 2 Summary: Data Science Fundamentals and Workflow",
+    "section": "",
+    "text": "Today’s Links\n\n\n\n\nWeek 2 Lecture Notes\nLab 1 Home"
+  },
+  {
+    "objectID": "week02-summary.html#computer-fundamentals",
+    "href": "week02-summary.html#computer-fundamentals",
+    "title": "Week 2 Summary: Data Science Fundamentals and Workflow",
+    "section": "Computer Fundamentals",
+    "text": "Computer Fundamentals\n\nMemory: RAM vs. Hard drive\nWhere does the data live?\nUnix vs. Linux vs. Mac vs. Windows\nFilesystem: / as root, ~ as home dir, . as current dir, .. as dir one level above"
+  },
+  {
+    "objectID": "week02-summary.html#coding-fundamentals",
+    "href": "week02-summary.html#coding-fundamentals",
+    "title": "Week 2 Summary: Data Science Fundamentals and Workflow",
+    "section": "Coding Fundamentals",
+    "text": "Coding Fundamentals"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DSAN 5000, Section 03 (Wednesdays)",
+    "section": "",
+    "text": "This is a “hub” collecting relevant links for each week, for students in Prof. Jeff’s Wednesday section (Section 03) of DSAN 5000: Data Science and Analytics, Fall 2023 at Georgetown University.\nIt is not a replacement for the Main Course Page or the Canvas Page, which are shared across all sections!\nUse the menu on the left, or the table below, to view the resources for a specific week.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nWeek 1: Welcome to DSAN 5000!\n\n\nWednesday, August 23, 2023\n\n\n\n\nWeek 2: Data Science Fundamentals and Workflow\n\n\nWednesday, August 30, 2023\n\n\n\n\nWeek 3: Data Science Workflow\n\n\nWednesday, September 6, 2023\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "w03/index.html",
+    "href": "w03/index.html",
+    "title": "Week 3: Data Science Workflow",
+    "section": "",
+    "text": "Open slides in new window →"
+  },
+  {
+    "objectID": "w03/index.html#intranet-vs.-internet",
+    "href": "w03/index.html#intranet-vs.-internet",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Intranet vs. Internet",
+    "text": "Intranet vs. Internet\n\nCrucial distinction: can set up a “mini-internet”, an intranet, within your own home\nOrganizations (businesses, government agencies) with security needs often do exactly this: link a set of computers and servers together, no outside access\n\n\n\n\n\n\n\nInternet = basically a giant intranet, open to the whole world"
+  },
+  {
+    "objectID": "w03/index.html#key-building-blocks-locating-servers",
+    "href": "w03/index.html#key-building-blocks-locating-servers",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Key Building Blocks: Locating Servers",
+    "text": "Key Building Blocks: Locating Servers\n\nIP Addresses (Internet Protocol addresses): Numeric addresses for uniquely identifying computers on a network\n\nGeorgetown University, for example, is allocated IP addresses between 141.161.0.0 and 141.161.255.255\n\nURLs (Uniform Resource Locators): The more human-readable website addresses you’re used to: google.com, georgetown.edu, etc.\n\nBuilt on top of IP addresses, via a directory which maps URLs → IP addresses\ngeorgetown.edu, for example, is really 23.185.0.21"
+  },
+  {
+    "objectID": "w03/index.html#what-happens-when-i-visit-a-urlip",
+    "href": "w03/index.html#what-happens-when-i-visit-a-urlip",
+    "title": "Week 3: Data Science Workflow",
+    "section": "What Happens When I Visit a URL/IP?",
+    "text": "What Happens When I Visit a URL/IP?\n\nHTTP(S) (HyperText Transfer Protocol (Secure)): common syntax for web clients to make requests and servers to respond\n\nSeveral types of requests can be made: GET, POST, HEAD; for now, we focus on the GET request, the request your browser makes by default\n\nHTML (HyperText Markup Language): For specifying layout and content of page\n\nStructure is analogous to boxes of content: &lt;html&gt; box contains &lt;head&gt; (metadata, e.g., page title) and &lt;body&gt; (page content) boxes, &lt;body&gt; box contains e.g. header, footer, navigation bar, and main content of page.\nModern webpages also include CSS (Cascading Style Sheets) for styling this content, and Javascript2 for interactivity (changing/updating content)\nHTML allows linking to another page with a special anchor tag (&lt;a&gt;): &lt;a href=\"https://npr.org/\"&gt;news&lt;/a&gt; creates a link, so when you click “news”, browser will request (fetch the HTML for) the URL https://npr.org"
+  },
+  {
+    "objectID": "w03/index.html#https-requests-in-action",
+    "href": "w03/index.html#https-requests-in-action",
+    "title": "Week 3: Data Science Workflow",
+    "section": "HTTP(S) Requests in Action",
+    "text": "HTTP(S) Requests in Action\n\n\n\nImage from Menczer, Fortunato, and Davis (2020, 90)"
+  },
+  {
+    "objectID": "w03/index.html#how-does-a-web-server-work",
+    "href": "w03/index.html#how-does-a-web-server-work",
+    "title": "Week 3: Data Science Workflow",
+    "section": "How Does a Web Server Work?",
+    "text": "How Does a Web Server Work?\n\nWe use the term “server” metonymously3\n\nSometimes we mean the hardware, the box of processors and hard drives\nBut, sometimes we mean the software that runs on the hardware\n\nA web server, in the software sense, is a program that is always running, 24/7\nWaits for requests (via HTTPS), then serves HTML code in response (also via HTTPS)\n\n\n\n\n\n\n\nhello_server.py\n\nfrom flask import Flask\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef hello_world():\n    return \"&lt;p&gt;Hello, World!&lt;/p&gt;\"\n@app.route(\"/hack\")\ndef hacker_detected():\n    return \"&lt;p&gt;Hacker detected, pls stop&lt;/p&gt;\"\n\n$ flask --app hello_server run\n * Serving Flask app 'hello_server'\n * Running on http://127.0.0.1:5000 (CTRL+C to quit)\n127.0.0.1 [06/Sep/2023 00:11:05] \"GET / HTTP\" 200\n127.0.0.1 [06/Sep/2023 00:11:06] \"GET /hack HTTP\" 200\nFigure 3: Basic web server (written in Flask)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: [Browser-parsed] responses to GET requests"
+  },
+  {
+    "objectID": "w03/index.html#how-does-a-web-client-work",
+    "href": "w03/index.html#how-does-a-web-client-work",
+    "title": "Week 3: Data Science Workflow",
+    "section": "How Does a Web Client Work?",
+    "text": "How Does a Web Client Work?\n\n\nOnce the server has responded to your request, you still only have raw HTML code\nSo, the browser is the program that renders this raw HTML code as a visual, (possibly) interactive webpage\nAs a data scientist, the most important thing to know is that different browsers can render the same HTML differently!\n\n\n\n\nA headache when pages are accessed through laptops\nA nightmare when pages are accessed through laptops and mobile"
+  },
+  {
+    "objectID": "w03/index.html#connecting-to-servers",
+    "href": "w03/index.html#connecting-to-servers",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Connecting to Servers",
+    "text": "Connecting to Servers\n\nWe’ve talked about the shell on your local computer, as well as the Georgetown Domains shell\nWe used Georgetown Domains’ web interface to access that shell, but you can remotely connect to any other shell from your local computer using the ssh command!"
+  },
+  {
+    "objectID": "w03/index.html#transferring-files-tofrom-servers",
+    "href": "w03/index.html#transferring-files-tofrom-servers",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Transferring Files to/from Servers",
+    "text": "Transferring Files to/from Servers\n\nRecall the copy command, cp, for files on your local computer\nThere is a remote equivalent, scp (Secure Copy Protocol), which you can use to copy files to/from remote servers to your local computer"
+  },
+  {
+    "objectID": "w03/index.html#important-alternative-rsync",
+    "href": "w03/index.html#important-alternative-rsync",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Important Alternative: rsync",
+    "text": "Important Alternative: rsync\n\nSimilar to scp, with same syntax, except it synchronizes (only copies files which are different or missing)\n\n\n\nsync_files.sh\n\nrsync -avz source_directory/ user@remote_server:/path/to/destination/\n\n\n-a (“archive”) tells rsync you want it to copy recursively\n-v (“verbose”) tells rsync to print information as it copies\n-z (“zip/compress”) tells rsync to compress files before copying and then decompress them on the server (thus massively speeding up the transfer)\nhttps://explainshell.com/explain?cmd=rsync+-avz"
+  },
+  {
+    "objectID": "w03/index.html#why-do-we-need-reproducible-research",
+    "href": "w03/index.html#why-do-we-need-reproducible-research",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Why Do We Need Reproducible Research?",
+    "text": "Why Do We Need Reproducible Research?\n\nMain human motivations (Max Weber): Wealth, Prestige, Power → “TED talk circuit”\n\n\n\n\nNew York Times Magazine, October 18, 2017."
+  },
+  {
+    "objectID": "w03/index.html#science-vs.-human-fallibility",
+    "href": "w03/index.html#science-vs.-human-fallibility",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Science vs. Human Fallibility",
+    "text": "Science vs. Human Fallibility\n\nScientific method + replicability/pre-registration = “Tying ourselves to the mast”\n\n\n\n\nJohn William Waterhouse, Ulysses and the Sirens, Public domain, via Wikimedia Commons\n\n\n\nIf we aim to disprove (!) our hypotheses, and we pre-register our methodology, we are bound to discovering truth, even when it is disadvantageous to our lives…"
+  },
+  {
+    "objectID": "w03/index.html#human-fallibility-is-winning",
+    "href": "w03/index.html#human-fallibility-is-winning",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Human Fallibility is Winning…",
+    "text": "Human Fallibility is Winning…\n\nMore than 70% of researchers have tried and failed to reproduce another scientist’s experiments, and more than half have failed to reproduce their own experiments. Those are some of the telling figures that emerged from Nature’s survey of 1,576 researchers (Baker 2016)\n\n\n\n\nsource(\"../_globals.r\")\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(ggplot2)\nga_lawyers &lt;- c(21362, 22254, 23134, 23698, 24367, 24930, 25632, 26459, 27227, 27457)\nski_df &lt;- tibble::tribble(\n  ~year, ~varname, ~value,\n  2000, \"ski_revenue\", 1551,\n  2001, \"ski_revenue\", 1635,\n  2002, \"ski_revenue\", 1801,\n  2003, \"ski_revenue\", 1827,\n  2004, \"ski_revenue\", 1956,\n  2005, \"ski_revenue\", 1989,\n  2006, \"ski_revenue\", 2178,\n  2007, \"ski_revenue\", 2257,\n  2008, \"ski_revenue\", 2476,\n  2009, \"ski_revenue\", 2438,\n)\nski_mean &lt;- mean(ski_df$value)\nski_sd &lt;- sd(ski_df$value)\nski_df &lt;- ski_df %&gt;% mutate(val_scaled = 12*value, val_norm = (value - ski_mean)/ski_sd)\nlaw_df &lt;- tibble::tibble(year=2000:2009, varname=\"ga_lawyers\", value=ga_lawyers)\nlaw_mean &lt;- mean(law_df$value)\nlaw_sd &lt;- sd(law_df$value)\nlaw_df &lt;- law_df %&gt;% mutate(val_norm = (value - law_mean)/law_sd)\nspur_df &lt;- dplyr::bind_rows(ski_df, law_df)\nggplot(spur_df, aes(x=year, y=val_norm, color=factor(varname, labels = c(\"Ski Revenue\",\"Lawyers in Georgia\")))) +\n  stat_smooth(method=\"loess\", se=FALSE) +\n  geom_point(size=g_pointsize/4) +\n  labs(\n    fill=\"\",\n    title=\"Ski Revenue vs. Georgia Lawyers\",\n    x=\"Year\",\n    color=\"Correlation: 99.2%\",\n    linetype=NULL\n  ) +\n  dsan_theme(\"custom\", 18) +\n  scale_x_continuous(\n    breaks=seq(from=2000, to=2014, by=2)\n  ) +\n  #scale_y_continuous(\n  #  name=\"Total Revenue, Ski Facilities (Million USD)\",\n  #  sec.axis = sec_axis(~ . * law_sd + law_mean, name = \"Number of Lawyers in Georgia\")\n  #) +\n  scale_y_continuous(breaks = -1:1,\n    labels = ~ . * round(ski_sd,1) + round(ski_mean,1),\n    name=\"Total Revenue, Ski Facilities (Million USD)\",\n    sec.axis = sec_axis(~ . * law_sd + law_mean, name = \"Number of Lawyers in Georgia\")) +\n  expand_limits(x=2010) +\n  #geom_hline(aes(yintercept=x, color=\"Mean Values\"), as.data.frame(list(x=0)), linewidth=0.75, alpha=1.0, show.legend = TRUE) +\n  scale_color_manual(\n    breaks=c('Ski Revenue', 'Lawyers in Georgia'),\n    values=c('Ski Revenue'=cbPalette[1], 'Lawyers in Georgia'=cbPalette[2]))\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\ncor(ski_df$value, law_df$value)\n\n[1] 0.9921178"
+  },
+  {
+    "objectID": "w03/index.html#r-vs.-rstudio-vs.-quarto",
+    "href": "w03/index.html#r-vs.-rstudio-vs.-quarto",
+    "title": "Week 3: Data Science Workflow",
+    "section": "R vs. RStudio vs. Quarto",
+    "text": "R vs. RStudio vs. Quarto\n\n\n\n\n\n\n\n\n\n\n\n\n\nGUI wrapper around R (Integrated Development Environment = IDE)\nRun blocks of R code (.qmd chunks)\n\n\n\nThe R Language \n\nProgramming language\nRuns scripts via Rscript &lt;script&gt;.r \n\n\n\n\n\n\n+\n\n\n\n\n\n\n\nGUI wrapper around Python (IDE)\nRun blocks of Python code (.ipynb cells)\n\n\n\n\nThe Python Language \n\nScripting language\nOn its own, just runs scripts via python &lt;script&gt;.py"
+  },
+  {
+    "objectID": "w03/index.html#reproducibility-and-literate-programming",
+    "href": "w03/index.html#reproducibility-and-literate-programming",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Reproducibility and Literate Programming",
+    "text": "Reproducibility and Literate Programming\n\nReproducible document: includes both the content (text, tables, figures) and the code or instructions required to generate that content.\n\nDesigned to ensure that others can reproduce the same document, including its data analysis, results, and visualizations, consistently and accurately.\ntldr: If you’re copying-and-pasting results from your code output to your results document, a red flag should go off in your head!\n\nLiterate programming is a coding and documentation approach where code and explanations of the code are combined in a single document.\n\nEmphasizes clear and understandable code by interleaving human-readable text (explanations, comments, and documentation) with executable code."
+  },
+  {
+    "objectID": "w03/index.html#single-source-many-outputs",
+    "href": "w03/index.html#single-source-many-outputs",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Single Source, Many Outputs",
+    "text": "Single Source, Many Outputs\n\nWe can create content (text, code, results, graphics) within a source document, and then use different weaving engines to create different document types:\n\n\n\n\nDocuments\n\nWeb pages (HTML)\nWord documents\nPDF files\n\nPresentations\n\nHTML\nPowerPoint\n\n\n\n\nWebsites/blogs\nBooks\nDashboards\nInteractive documents\nFormatted journal articles"
+  },
+  {
+    "objectID": "w03/index.html#interactivity",
+    "href": "w03/index.html#interactivity",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Interactivity!",
+    "text": "Interactivity!\n\nAre we “hiding something” by choosing a specific bin width? Make it transparent!"
+  },
+  {
+    "objectID": "w03/index.html#git-vs.-github",
+    "href": "w03/index.html#git-vs.-github",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Git vs. GitHub",
+    "text": "Git vs. GitHub\n(Important distinction!)\n\n\nGit \n\nCommand-line program\ngit init in shell to create\ngit add to track files\ngit commit to commit changes to tracked files\n\n\nGitHub \n\nCode hosting website\nCreate a repository (repo) for each project\nCan clone repos onto your local machine\n\n\n\n\ngit push/git pull: The link between the two!"
+  },
+  {
+    "objectID": "w03/index.html#git-diagram",
+    "href": "w03/index.html#git-diagram",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Git Diagram",
+    "text": "Git Diagram"
+  },
+  {
+    "objectID": "w03/index.html#initializing-a-repo",
+    "href": "w03/index.html#initializing-a-repo",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Initializing a Repo",
+    "text": "Initializing a Repo\n\nLet’s make a directory for our project called cool-project, and initialize a Git repo for it\n\n\nuser@hostname:~$ mkdir cool-project\nuser@hostname:~$ cd cool-project\nuser@hostname:~/cool-project$ git init\nInitialized empty Git repository in /home/user/cool-project/.git/\n\nThis creates a hidden folder, .git, in the directory:\n\n\nuser@hostname:~/cool-project$ ls -lah\ntotal 12K\ndrwxr-xr-x  3 user user 4.0K May 28 00:53 .\ndrwxr-xr-x 12 user user 4.0K May 28 00:53 ..\ndrwxr-xr-x  7 user user 4.0K May 28 00:53 .git\n\nThe Git Side: Local I"
+  },
+  {
+    "objectID": "w03/index.html#adding-and-committing-a-file",
+    "href": "w03/index.html#adding-and-committing-a-file",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Adding and Committing a File",
+    "text": "Adding and Committing a File\nWe’re writing Python code, so let’s create and track cool_code.py:\nuser@hostname:~/cool-project$ touch cool_code.py\nuser@hostname:~/cool-project$ git add cool_code.py\nuser@hostname:~/cool-project$ git status\nOn branch main\n\nNo commits yet\n\nChanges to be committed:\n  (use \"git rm --cached &lt;file&gt;...\" to unstage)\n        new file:   cool_code.py\n\nuser@hostname:~/cool-project$ git commit -m \"Initial version of cool_code.py\"\n[main (root-commit) b40dc25] Initial version of cool_code.py\n 1 file changed, 0 insertions(+), 0 deletions(-)\n create mode 100644 cool_code.py"
+  },
+  {
+    "objectID": "w03/index.html#the-commit-log",
+    "href": "w03/index.html#the-commit-log",
+    "title": "Week 3: Data Science Workflow",
+    "section": "The Commit Log",
+    "text": "The Commit Log\n\nView the commit log using git log:\n\nuser@hostname:~/cool-project$ git log\ncommit b40dc252a3b7355cc4c28397fefe7911ff3c94b9 (HEAD -&gt; main)\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:57:16 2023 +0000\n\n    Initial version of cool_code.py\n\n\n\n\n\ngitGraph\n   commit id: \"b40dc25\""
+  },
+  {
+    "objectID": "w03/index.html#making-changes",
+    "href": "w03/index.html#making-changes",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Making Changes",
+    "text": "Making Changes\nuser@hostname:~/cool-project$ git status\nOn branch main\nnothing to commit, working tree clean\nuser@hostname:~/cool-project$ echo \"1 + 1\" &gt;&gt; cool_code.py\nuser@hostname:~/cool-project$ more cool_code.py\n1 + 1\nuser@hostname:~/cool-project$ git add cool_code.py\nuser@hostname:~/cool-project$ git status\nOn branch main\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        modified:   cool_code.py\n\nuser@hostname:~/cool-project$ git commit -m \"Added code to cool_code.py\"\n[main e3bc497] Added code to cool_code.py\n 1 file changed, 1 insertion(+)"
+  },
+  {
+    "objectID": "w03/index.html#section",
+    "href": "w03/index.html#section",
+    "title": "Week 3: Data Science Workflow",
+    "section": "",
+    "text": "The git log will show the new version:\nuser@hostname:~/cool-project$ git log\ncommit e3bc497acbb5a487566ff2014dcd7b83d0c75224 (HEAD -&gt; main)\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:38:05 2023 +0000\n\n    Added code to cool_code.py\n\ncommit b40dc25b14c0426b06c8d182184e147853f3c12e\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:37:02 2023 +0000\n\n    Initial version of cool_code.py"
+  },
+  {
+    "objectID": "w03/index.html#more-changes",
+    "href": "w03/index.html#more-changes",
+    "title": "Week 3: Data Science Workflow",
+    "section": "More Changes",
+    "text": "More Changes\nuser@hostname:~/cool-project$ echo \"2 + 2\" &gt;&gt; cool_code.py\nuser@hostname:~/cool-project$ more cool_code.py\n1 + 1\n2 + 2\nuser@hostname:~/cool-project$ git add cool_code.py\nuser@hostname:~/cool-project$ git status\nOn branch main\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        modified:   cool_code.py\n\nuser@hostname:~/cool-project$ git commit -m \"Second version of cool_code.py\"\n[main 4007db9] Second version of cool_code.py\n 1 file changed, 1 insertion(+)"
+  },
+  {
+    "objectID": "w03/index.html#and-the-git-log",
+    "href": "w03/index.html#and-the-git-log",
+    "title": "Week 3: Data Science Workflow",
+    "section": "And the git log",
+    "text": "And the git log\nuser@hostname:~/cool-project$ git log\ncommit 4007db9a031ca134fe09eab840b2bc845366a9c1 (HEAD -&gt; main)\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:39:28 2023 +0000\n\n    Second version of cool_code.py\n\ncommit e3bc497acbb5a487566ff2014dcd7b83d0c75224\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:38:05 2023 +0000\n\n    Added code to cool_code.py\n\ncommit b40dc25b14c0426b06c8d182184e147853f3c12e\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:37:02 2023 +0000\n\n    Initial (empty) version of cool_code.py"
+  },
+  {
+    "objectID": "w03/index.html#undoing-a-commit-i",
+    "href": "w03/index.html#undoing-a-commit-i",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Undoing a Commit I",
+    "text": "Undoing a Commit I\nFirst check the git log to find the hash for the commit you want to revert back to:\ncommit e3bc497acbb5a487566ff2014dcd7b83d0c75224\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:38:05 2023 +0000\n\n    Added code to cool_code.py"
+  },
+  {
+    "objectID": "w03/index.html#undoing-a-commit-ii",
+    "href": "w03/index.html#undoing-a-commit-ii",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Undoing a Commit II",
+    "text": "Undoing a Commit II\n\n This is irreversable! \n\nuser@hostname:~/cool-project$ git reset --hard e3bc497ac\nHEAD is now at e3bc497 Added code to cool_code.py\nuser@hostname:~/cool-project$ git log\ncommit e3bc497acbb5a487566ff2014dcd7b83d0c75224 (HEAD -&gt; main)\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:38:05 2023 +0000\n\n    Added code to cool_code.py\n\ncommit b40dc25b14c0426b06c8d182184e147853f3c12e\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:37:02 2023 +0000\n\n    Initial (empty) version of cool_code.py"
+  },
+  {
+    "objectID": "w03/index.html#onwards-and-upwards",
+    "href": "w03/index.html#onwards-and-upwards",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Onwards and Upwards",
+    "text": "Onwards and Upwards\nuser@hostname:~/cool-project$ echo \"3 + 3\" &gt;&gt; cool_code.py\nuser@hostname:~/cool-project$ git add cool_code.py\nuser@hostname:~/cool-project$ git status\nOn branch main\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        modified:   cool_code.py\n\nuser@hostname:~/cool-project$ git commit -m \"Added different code to cool_code.py\"\n[main 700d955] Added different code to cool_code.py\n 1 file changed, 1 insertion(+)"
+  },
+  {
+    "objectID": "w03/index.html#section-1",
+    "href": "w03/index.html#section-1",
+    "title": "Week 3: Data Science Workflow",
+    "section": "",
+    "text": "The final git log:\nuser@hostname:~/cool-project$ git log\ncommit 700d955faacb27d7b8bc464b9451851b5e319f20 (HEAD -&gt; main)\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:44:49 2023 +0000\n\n    Added different code to cool_code.py\n\ncommit e3bc497acbb5a487566ff2014dcd7b83d0c75224\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:38:05 2023 +0000\n\n    Added code to cool_code.py\n\ncommit b40dc25b14c0426b06c8d182184e147853f3c12e\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:37:02 2023 +0000\n\n    Initial (empty) version of cool_code.py"
+  },
+  {
+    "objectID": "w03/index.html#but-why-these-diagrams",
+    "href": "w03/index.html#but-why-these-diagrams",
+    "title": "Week 3: Data Science Workflow",
+    "section": "But Why These Diagrams?",
+    "text": "But Why These Diagrams?\nEven the simplest projects can start to look like:\n\n\n\n\n\ngitGraph\n       commit id: \"537dd67\"\n       commit id: \"6639143\"\n       branch nice_feature\n       checkout nice_feature\n       commit id: \"937ded8\"\n       checkout main\n       commit id: \"9e6679c\"\n       checkout nice_feature\n       branch very_nice_feature\n       checkout very_nice_feature\n       commit id: \"7f4de03\"\n       checkout main\n       commit id: \"6df80c1\"\n       checkout nice_feature\n       commit id: \"bd0ebb8\"\n       checkout main\n       merge nice_feature id: \"9ff61cc\" tag: \"V 1.0.0\" type: HIGHLIGHT\n       checkout very_nice_feature\n       commit id: \"370613b\"\n       checkout main\n       commit id: \"9a07a97\""
+  },
+  {
+    "objectID": "w03/index.html#the-github-side-remote",
+    "href": "w03/index.html#the-github-side-remote",
+    "title": "Week 3: Data Science Workflow",
+    "section": "The GitHub Side: Remote",
+    "text": "The GitHub Side: Remote"
+  },
+  {
+    "objectID": "w03/index.html#an-empty-repo",
+    "href": "w03/index.html#an-empty-repo",
+    "title": "Week 3: Data Science Workflow",
+    "section": "An Empty Repo",
+    "text": "An Empty Repo"
+  },
+  {
+    "objectID": "w03/index.html#refresh-after-git-push",
+    "href": "w03/index.html#refresh-after-git-push",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Refresh after git push",
+    "text": "Refresh after git push"
+  },
+  {
+    "objectID": "w03/index.html#commit-history",
+    "href": "w03/index.html#commit-history",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Commit History",
+    "text": "Commit History"
+  },
+  {
+    "objectID": "w03/index.html#checking-the-diff",
+    "href": "w03/index.html#checking-the-diff",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Checking the diff",
+    "text": "Checking the diff"
+  },
+  {
+    "objectID": "w03/index.html#web-development",
+    "href": "w03/index.html#web-development",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Web Development",
+    "text": "Web Development\n\n\n\n\n\n\n\n\n\nFrontend   \nBackend   \n\n\n\n\nLow Level\nHTML/CSS/JavaScript\nGitHub Pages\n\n\nMiddle Level\nJS Libraries\nPHP, SQL\n\n\nHigh Level\nReact, Next.js\nNode.js, Vercel\n\n\n\n\nFrontend icons: UI+UI elements, what the user sees (on the screen), user experience (UX), data visualization Backend icons: Databases, Security"
+  },
+  {
+    "objectID": "w03/index.html#getting-content-onto-the-internet",
+    "href": "w03/index.html#getting-content-onto-the-internet",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Getting Content onto the Internet",
+    "text": "Getting Content onto the Internet\n\n\n\n\nStep 1: index.html\n\n\nStep 2: Create GitHub repository\n\n\nStep 3: git init, git add -A ., git push\n\n\nStep 4: Enable GitHub Pages in repo settings\n\n\nStep 5: &lt;username&gt;.github.io!"
+  },
+  {
+    "objectID": "w03/index.html#deploying-from-a-branchfolder",
+    "href": "w03/index.html#deploying-from-a-branchfolder",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Deploying from a Branch/Folder",
+    "text": "Deploying from a Branch/Folder"
+  },
+  {
+    "objectID": "w03/index.html#lab-demonstration-1-transferring-files",
+    "href": "w03/index.html#lab-demonstration-1-transferring-files",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Lab Demonstration 1: Transferring Files",
+    "text": "Lab Demonstration 1: Transferring Files"
+  },
+  {
+    "objectID": "w03/index.html#lab-demonstration-2-quarto",
+    "href": "w03/index.html#lab-demonstration-2-quarto",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Lab Demonstration 2: Quarto",
+    "text": "Lab Demonstration 2: Quarto"
+  },
+  {
+    "objectID": "w03/index.html#lab-demonstration-3-git-and-github",
+    "href": "w03/index.html#lab-demonstration-3-git-and-github",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Lab Demonstration 3: Git and GitHub",
+    "text": "Lab Demonstration 3: Git and GitHub"
+  },
+  {
+    "objectID": "w03/index.html#assignment-overview",
+    "href": "w03/index.html#assignment-overview",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Assignment Overview",
+    "text": "Assignment Overview\n\nCreate a repo on your private GitHub account called 5000-lab-1.2\nClone the repo to your local machine with git clone\nCreate a blank Quarto website project, then use a .bib file to add citations\nAdd content to index.qmd\nAdd content to about.ipynb\nBuild a simple presentation in slides/slides.ipynb using the revealjs format\nRender the website using quarto render\nSync your changes to GitHub\nUse rsync or scp to copy the _site directory to your GU domains server (within ~/public_html)\nCreate a Zotero (or Mendeley) account, download the software, and add at least one reference to your site by syncing the .bib file"
+  },
+  {
+    "objectID": "w03/index.html#references",
+    "href": "w03/index.html#references",
+    "title": "Week 3: Data Science Workflow",
+    "section": "References",
+    "text": "References\n\n\nBaker, Monya. 2016. “1,500 Scientists Lift the Lid on Reproducibility.” Nature 533 (7604): 452–54. https://doi.org/10.1038/533452a.\n\n\nMenczer, Filippo, Santo Fortunato, and Clayton A. Davis. 2020. A First Course in Network Science. Cambridge University Press."
+  },
+  {
+    "objectID": "w03/index.html#footnotes",
+    "href": "w03/index.html#footnotes",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nTo see this, you can open your Terminal and run the ping command: ping georgetown.edu.↩︎\nIncredibly, despite the name, Javascript has absolutely nothing to do with the Java programming language…↩︎\nSorry for jargon: it just means using the same word for different levels of a system (dangerous when talking computers!)↩︎"
+  },
+  {
+    "objectID": "w03/slides.html#intranet-vs.-internet",
+    "href": "w03/slides.html#intranet-vs.-internet",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Intranet vs. Internet",
+    "text": "Intranet vs. Internet\n\nCrucial distinction: can set up a “mini-internet”, an intranet, within your own home\nOrganizations (businesses, government agencies) with security needs often do exactly this: link a set of computers and servers together, no outside access\n\n\n\nInternet = basically a giant intranet, open to the whole world"
+  },
+  {
+    "objectID": "w03/slides.html#key-building-blocks-locating-servers",
+    "href": "w03/slides.html#key-building-blocks-locating-servers",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Key Building Blocks: Locating Servers",
+    "text": "Key Building Blocks: Locating Servers\n\nIP Addresses (Internet Protocol addresses): Numeric addresses for uniquely identifying computers on a network\n\nGeorgetown University, for example, is allocated IP addresses between 141.161.0.0 and 141.161.255.255\n\nURLs (Uniform Resource Locators): The more human-readable website addresses you’re used to: google.com, georgetown.edu, etc.\n\nBuilt on top of IP addresses, via a directory which maps URLs → IP addresses\ngeorgetown.edu, for example, is really 23.185.0.21\n\n\nTo see this, you can open your Terminal and run the ping command: ping georgetown.edu."
+  },
+  {
+    "objectID": "w03/slides.html#what-happens-when-i-visit-a-urlip",
+    "href": "w03/slides.html#what-happens-when-i-visit-a-urlip",
+    "title": "Week 3: Data Science Workflow",
+    "section": "What Happens When I Visit a URL/IP?",
+    "text": "What Happens When I Visit a URL/IP?\n\nHTTP(S) (HyperText Transfer Protocol (Secure)): common syntax for web clients to make requests and servers to respond\n\nSeveral types of requests can be made: GET, POST, HEAD; for now, we focus on the GET request, the request your browser makes by default\n\nHTML (HyperText Markup Language): For specifying layout and content of page\n\nStructure is analogous to boxes of content: &lt;html&gt; box contains &lt;head&gt; (metadata, e.g., page title) and &lt;body&gt; (page content) boxes, &lt;body&gt; box contains e.g. header, footer, navigation bar, and main content of page.\nModern webpages also include CSS (Cascading Style Sheets) for styling this content, and Javascript1 for interactivity (changing/updating content)\nHTML allows linking to another page with a special anchor tag (&lt;a&gt;): &lt;a href=\"https://npr.org/\"&gt;news&lt;/a&gt; creates a link, so when you click “news”, browser will request (fetch the HTML for) the URL https://npr.org\n\n\nIncredibly, despite the name, Javascript has absolutely nothing to do with the Java programming language…"
+  },
+  {
+    "objectID": "w03/slides.html#https-requests-in-action",
+    "href": "w03/slides.html#https-requests-in-action",
+    "title": "Week 3: Data Science Workflow",
+    "section": "HTTP(S) Requests in Action",
+    "text": "HTTP(S) Requests in Action\n\nImage from Menczer, Fortunato, and Davis (2020, 90)"
+  },
+  {
+    "objectID": "w03/slides.html#how-does-a-web-server-work",
+    "href": "w03/slides.html#how-does-a-web-server-work",
+    "title": "Week 3: Data Science Workflow",
+    "section": "How Does a Web Server Work?",
+    "text": "How Does a Web Server Work?\n\nWe use the term “server” metonymously1\n\nSometimes we mean the hardware, the box of processors and hard drives\nBut, sometimes we mean the software that runs on the hardware\n\nA web server, in the software sense, is a program that is always running, 24/7\nWaits for requests (via HTTPS), then serves HTML code in response (also via HTTPS)\n\n\n\n\n\n\n\nhello_server.py\n\nfrom flask import Flask\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef hello_world():\n    return \"&lt;p&gt;Hello, World!&lt;/p&gt;\"\n@app.route(\"/hack\")\ndef hacker_detected():\n    return \"&lt;p&gt;Hacker detected, pls stop&lt;/p&gt;\"\n\n$ flask --app hello_server run\n * Serving Flask app 'hello_server'\n * Running on http://127.0.0.1:5000 (CTRL+C to quit)\n127.0.0.1 [06/Sep/2023 00:11:05] \"GET / HTTP\" 200\n127.0.0.1 [06/Sep/2023 00:11:06] \"GET /hack HTTP\" 200\nFigure 3: Basic web server (written in Flask)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: [Browser-parsed] responses to GET requests\n\n\n\n\nSorry for jargon: it just means using the same word for different levels of a system (dangerous when talking computers!)"
+  },
+  {
+    "objectID": "w03/slides.html#how-does-a-web-client-work",
+    "href": "w03/slides.html#how-does-a-web-client-work",
+    "title": "Week 3: Data Science Workflow",
+    "section": "How Does a Web Client Work?",
+    "text": "How Does a Web Client Work?\n\n\nOnce the server has responded to your request, you still only have raw HTML code\nSo, the browser is the program that renders this raw HTML code as a visual, (possibly) interactive webpage\nAs a data scientist, the most important thing to know is that different browsers can render the same HTML differently!\n\n\n\n\nA headache when pages are accessed through laptops\nA nightmare when pages are accessed through laptops and mobile"
+  },
+  {
+    "objectID": "w03/slides.html#connecting-to-servers",
+    "href": "w03/slides.html#connecting-to-servers",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Connecting to Servers",
+    "text": "Connecting to Servers\n\nWe’ve talked about the shell on your local computer, as well as the Georgetown Domains shell\nWe used Georgetown Domains’ web interface to access that shell, but you can remotely connect to any other shell from your local computer using the ssh command!"
+  },
+  {
+    "objectID": "w03/slides.html#transferring-files-tofrom-servers",
+    "href": "w03/slides.html#transferring-files-tofrom-servers",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Transferring Files to/from Servers",
+    "text": "Transferring Files to/from Servers\n\nRecall the copy command, cp, for files on your local computer\nThere is a remote equivalent, scp (Secure Copy Protocol), which you can use to copy files to/from remote servers to your local computer"
+  },
+  {
+    "objectID": "w03/slides.html#important-alternative-rsync",
+    "href": "w03/slides.html#important-alternative-rsync",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Important Alternative: rsync",
+    "text": "Important Alternative: rsync\n\nSimilar to scp, with same syntax, except it synchronizes (only copies files which are different or missing)\n\n\n\nsync_files.sh\n\nrsync -avz source_directory/ user@remote_server:/path/to/destination/\n\n\n-a (“archive”) tells rsync you want it to copy recursively\n-v (“verbose”) tells rsync to print information as it copies\n-z (“zip/compress”) tells rsync to compress files before copying and then decompress them on the server (thus massively speeding up the transfer)\nhttps://explainshell.com/explain?cmd=rsync+-avz"
+  },
+  {
+    "objectID": "w03/slides.html#why-do-we-need-reproducible-research",
+    "href": "w03/slides.html#why-do-we-need-reproducible-research",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Why Do We Need Reproducible Research?",
+    "text": "Why Do We Need Reproducible Research?\n\nMain human motivations (Max Weber): Wealth, Prestige, Power → “TED talk circuit”\n\n\nNew York Times Magazine, October 18, 2017."
+  },
+  {
+    "objectID": "w03/slides.html#science-vs.-human-fallibility",
+    "href": "w03/slides.html#science-vs.-human-fallibility",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Science vs. Human Fallibility",
+    "text": "Science vs. Human Fallibility\n\nScientific method + replicability/pre-registration = “Tying ourselves to the mast”\n\n\nJohn William Waterhouse, Ulysses and the Sirens, Public domain, via Wikimedia Commons\nIf we aim to disprove (!) our hypotheses, and we pre-register our methodology, we are bound to discovering truth, even when it is disadvantageous to our lives…"
+  },
+  {
+    "objectID": "w03/slides.html#human-fallibility-is-winning",
+    "href": "w03/slides.html#human-fallibility-is-winning",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Human Fallibility is Winning…",
+    "text": "Human Fallibility is Winning…\n\nMore than 70% of researchers have tried and failed to reproduce another scientist’s experiments, and more than half have failed to reproduce their own experiments. Those are some of the telling figures that emerged from Nature’s survey of 1,576 researchers (Baker 2016)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncor(ski_df$value, law_df$value)\n\n[1] 0.9921178"
+  },
+  {
+    "objectID": "w03/slides.html#r-vs.-rstudio-vs.-quarto",
+    "href": "w03/slides.html#r-vs.-rstudio-vs.-quarto",
+    "title": "Week 3: Data Science Workflow",
+    "section": "R vs. RStudio vs. Quarto",
+    "text": "R vs. RStudio vs. Quarto\n\n\n\n\n\n\n\n\n\n\n\n\n\nGUI wrapper around R (Integrated Development Environment = IDE)\nRun blocks of R code (.qmd chunks)\n\n\n\nThe R Language \n\nProgramming language\nRuns scripts via Rscript &lt;script&gt;.r \n\n\n\n\n\n\n+\n\n\n\n\n\n\n\nGUI wrapper around Python (IDE)\nRun blocks of Python code (.ipynb cells)\n\n\n\n\nThe Python Language \n\nScripting language\nOn its own, just runs scripts via python &lt;script&gt;.py"
+  },
+  {
+    "objectID": "w03/slides.html#reproducibility-and-literate-programming",
+    "href": "w03/slides.html#reproducibility-and-literate-programming",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Reproducibility and Literate Programming",
+    "text": "Reproducibility and Literate Programming\n\nReproducible document: includes both the content (text, tables, figures) and the code or instructions required to generate that content.\n\nDesigned to ensure that others can reproduce the same document, including its data analysis, results, and visualizations, consistently and accurately.\ntldr: If you’re copying-and-pasting results from your code output to your results document, a red flag should go off in your head!\n\nLiterate programming is a coding and documentation approach where code and explanations of the code are combined in a single document.\n\nEmphasizes clear and understandable code by interleaving human-readable text (explanations, comments, and documentation) with executable code."
+  },
+  {
+    "objectID": "w03/slides.html#single-source-many-outputs",
+    "href": "w03/slides.html#single-source-many-outputs",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Single Source, Many Outputs",
+    "text": "Single Source, Many Outputs\n\nWe can create content (text, code, results, graphics) within a source document, and then use different weaving engines to create different document types:\n\n\n\n\nDocuments\n\nWeb pages (HTML)\nWord documents\nPDF files\n\nPresentations\n\nHTML\nPowerPoint\n\n\n\n\nWebsites/blogs\nBooks\nDashboards\nInteractive documents\nFormatted journal articles"
+  },
+  {
+    "objectID": "w03/slides.html#interactivity",
+    "href": "w03/slides.html#interactivity",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Interactivity!",
+    "text": "Interactivity!\n\nAre we “hiding something” by choosing a specific bin width? Make it transparent!"
+  },
+  {
+    "objectID": "w03/slides.html#git-vs.-github",
+    "href": "w03/slides.html#git-vs.-github",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Git vs. GitHub",
+    "text": "Git vs. GitHub\n(Important distinction!)\n\n\nGit \n\nCommand-line program\ngit init in shell to create\ngit add to track files\ngit commit to commit changes to tracked files\n\n\nGitHub \n\nCode hosting website\nCreate a repository (repo) for each project\nCan clone repos onto your local machine\n\n\n\n\ngit push/git pull: The link between the two!"
+  },
+  {
+    "objectID": "w03/slides.html#git-diagram",
+    "href": "w03/slides.html#git-diagram",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Git Diagram",
+    "text": "Git Diagram"
+  },
+  {
+    "objectID": "w03/slides.html#initializing-a-repo",
+    "href": "w03/slides.html#initializing-a-repo",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Initializing a Repo",
+    "text": "Initializing a Repo\n\nLet’s make a directory for our project called cool-project, and initialize a Git repo for it\n\n\nuser@hostname:~$ mkdir cool-project\nuser@hostname:~$ cd cool-project\nuser@hostname:~/cool-project$ git init\nInitialized empty Git repository in /home/user/cool-project/.git/\n\nThis creates a hidden folder, .git, in the directory:\n\n\nuser@hostname:~/cool-project$ ls -lah\ntotal 12K\ndrwxr-xr-x  3 user user 4.0K May 28 00:53 .\ndrwxr-xr-x 12 user user 4.0K May 28 00:53 ..\ndrwxr-xr-x  7 user user 4.0K May 28 00:53 .git\n\nThe Git Side: Local I"
+  },
+  {
+    "objectID": "w03/slides.html#adding-and-committing-a-file",
+    "href": "w03/slides.html#adding-and-committing-a-file",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Adding and Committing a File",
+    "text": "Adding and Committing a File\nWe’re writing Python code, so let’s create and track cool_code.py:\nuser@hostname:~/cool-project$ touch cool_code.py\nuser@hostname:~/cool-project$ git add cool_code.py\nuser@hostname:~/cool-project$ git status\nOn branch main\n\nNo commits yet\n\nChanges to be committed:\n  (use \"git rm --cached &lt;file&gt;...\" to unstage)\n        new file:   cool_code.py\n\nuser@hostname:~/cool-project$ git commit -m \"Initial version of cool_code.py\"\n[main (root-commit) b40dc25] Initial version of cool_code.py\n 1 file changed, 0 insertions(+), 0 deletions(-)\n create mode 100644 cool_code.py"
+  },
+  {
+    "objectID": "w03/slides.html#the-commit-log",
+    "href": "w03/slides.html#the-commit-log",
+    "title": "Week 3: Data Science Workflow",
+    "section": "The Commit Log",
+    "text": "The Commit Log\n\nView the commit log using git log:\n\nuser@hostname:~/cool-project$ git log\ncommit b40dc252a3b7355cc4c28397fefe7911ff3c94b9 (HEAD -&gt; main)\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:57:16 2023 +0000\n\n    Initial version of cool_code.py\n\n\n\n\n\ngitGraph\n   commit id: \"b40dc25\""
+  },
+  {
+    "objectID": "w03/slides.html#making-changes",
+    "href": "w03/slides.html#making-changes",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Making Changes",
+    "text": "Making Changes\nuser@hostname:~/cool-project$ git status\nOn branch main\nnothing to commit, working tree clean\nuser@hostname:~/cool-project$ echo \"1 + 1\" &gt;&gt; cool_code.py\nuser@hostname:~/cool-project$ more cool_code.py\n1 + 1\nuser@hostname:~/cool-project$ git add cool_code.py\nuser@hostname:~/cool-project$ git status\nOn branch main\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        modified:   cool_code.py\n\nuser@hostname:~/cool-project$ git commit -m \"Added code to cool_code.py\"\n[main e3bc497] Added code to cool_code.py\n 1 file changed, 1 insertion(+)"
+  },
+  {
+    "objectID": "w03/slides.html#section",
+    "href": "w03/slides.html#section",
+    "title": "Week 3: Data Science Workflow",
+    "section": "",
+    "text": "The git log will show the new version:\nuser@hostname:~/cool-project$ git log\ncommit e3bc497acbb5a487566ff2014dcd7b83d0c75224 (HEAD -&gt; main)\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:38:05 2023 +0000\n\n    Added code to cool_code.py\n\ncommit b40dc25b14c0426b06c8d182184e147853f3c12e\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:37:02 2023 +0000\n\n    Initial version of cool_code.py"
+  },
+  {
+    "objectID": "w03/slides.html#more-changes",
+    "href": "w03/slides.html#more-changes",
+    "title": "Week 3: Data Science Workflow",
+    "section": "More Changes",
+    "text": "More Changes\nuser@hostname:~/cool-project$ echo \"2 + 2\" &gt;&gt; cool_code.py\nuser@hostname:~/cool-project$ more cool_code.py\n1 + 1\n2 + 2\nuser@hostname:~/cool-project$ git add cool_code.py\nuser@hostname:~/cool-project$ git status\nOn branch main\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        modified:   cool_code.py\n\nuser@hostname:~/cool-project$ git commit -m \"Second version of cool_code.py\"\n[main 4007db9] Second version of cool_code.py\n 1 file changed, 1 insertion(+)"
+  },
+  {
+    "objectID": "w03/slides.html#and-the-git-log",
+    "href": "w03/slides.html#and-the-git-log",
+    "title": "Week 3: Data Science Workflow",
+    "section": "And the git log",
+    "text": "And the git log\nuser@hostname:~/cool-project$ git log\ncommit 4007db9a031ca134fe09eab840b2bc845366a9c1 (HEAD -&gt; main)\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:39:28 2023 +0000\n\n    Second version of cool_code.py\n\ncommit e3bc497acbb5a487566ff2014dcd7b83d0c75224\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:38:05 2023 +0000\n\n    Added code to cool_code.py\n\ncommit b40dc25b14c0426b06c8d182184e147853f3c12e\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:37:02 2023 +0000\n\n    Initial (empty) version of cool_code.py"
+  },
+  {
+    "objectID": "w03/slides.html#undoing-a-commit-i",
+    "href": "w03/slides.html#undoing-a-commit-i",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Undoing a Commit I",
+    "text": "Undoing a Commit I\nFirst check the git log to find the hash for the commit you want to revert back to:\ncommit e3bc497acbb5a487566ff2014dcd7b83d0c75224\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:38:05 2023 +0000\n\n    Added code to cool_code.py"
+  },
+  {
+    "objectID": "w03/slides.html#undoing-a-commit-ii",
+    "href": "w03/slides.html#undoing-a-commit-ii",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Undoing a Commit II",
+    "text": "Undoing a Commit II\n\n This is irreversable! \n\nuser@hostname:~/cool-project$ git reset --hard e3bc497ac\nHEAD is now at e3bc497 Added code to cool_code.py\nuser@hostname:~/cool-project$ git log\ncommit e3bc497acbb5a487566ff2014dcd7b83d0c75224 (HEAD -&gt; main)\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:38:05 2023 +0000\n\n    Added code to cool_code.py\n\ncommit b40dc25b14c0426b06c8d182184e147853f3c12e\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:37:02 2023 +0000\n\n    Initial (empty) version of cool_code.py"
+  },
+  {
+    "objectID": "w03/slides.html#onwards-and-upwards",
+    "href": "w03/slides.html#onwards-and-upwards",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Onwards and Upwards",
+    "text": "Onwards and Upwards\nuser@hostname:~/cool-project$ echo \"3 + 3\" &gt;&gt; cool_code.py\nuser@hostname:~/cool-project$ git add cool_code.py\nuser@hostname:~/cool-project$ git status\nOn branch main\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        modified:   cool_code.py\n\nuser@hostname:~/cool-project$ git commit -m \"Added different code to cool_code.py\"\n[main 700d955] Added different code to cool_code.py\n 1 file changed, 1 insertion(+)"
+  },
+  {
+    "objectID": "w03/slides.html#section-1",
+    "href": "w03/slides.html#section-1",
+    "title": "Week 3: Data Science Workflow",
+    "section": "",
+    "text": "The final git log:\nuser@hostname:~/cool-project$ git log\ncommit 700d955faacb27d7b8bc464b9451851b5e319f20 (HEAD -&gt; main)\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:44:49 2023 +0000\n\n    Added different code to cool_code.py\n\ncommit e3bc497acbb5a487566ff2014dcd7b83d0c75224\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:38:05 2023 +0000\n\n    Added code to cool_code.py\n\ncommit b40dc25b14c0426b06c8d182184e147853f3c12e\nAuthor: Jeff Jacobs &lt;jjacobs3@cs.stanford.edu&gt;\nDate:   Sun May 28 00:37:02 2023 +0000\n\n    Initial (empty) version of cool_code.py"
+  },
+  {
+    "objectID": "w03/slides.html#but-why-these-diagrams",
+    "href": "w03/slides.html#but-why-these-diagrams",
+    "title": "Week 3: Data Science Workflow",
+    "section": "But Why These Diagrams?",
+    "text": "But Why These Diagrams?\nEven the simplest projects can start to look like:\n\n\n\n\n\ngitGraph\n       commit id: \"537dd67\"\n       commit id: \"6639143\"\n       branch nice_feature\n       checkout nice_feature\n       commit id: \"937ded8\"\n       checkout main\n       commit id: \"9e6679c\"\n       checkout nice_feature\n       branch very_nice_feature\n       checkout very_nice_feature\n       commit id: \"7f4de03\"\n       checkout main\n       commit id: \"6df80c1\"\n       checkout nice_feature\n       commit id: \"bd0ebb8\"\n       checkout main\n       merge nice_feature id: \"9ff61cc\" tag: \"V 1.0.0\" type: HIGHLIGHT\n       checkout very_nice_feature\n       commit id: \"370613b\"\n       checkout main\n       commit id: \"9a07a97\""
+  },
+  {
+    "objectID": "w03/slides.html#the-github-side-remote",
+    "href": "w03/slides.html#the-github-side-remote",
+    "title": "Week 3: Data Science Workflow",
+    "section": "The GitHub Side: Remote",
+    "text": "The GitHub Side: Remote"
+  },
+  {
+    "objectID": "w03/slides.html#an-empty-repo",
+    "href": "w03/slides.html#an-empty-repo",
+    "title": "Week 3: Data Science Workflow",
+    "section": "An Empty Repo",
+    "text": "An Empty Repo"
+  },
+  {
+    "objectID": "w03/slides.html#refresh-after-git-push",
+    "href": "w03/slides.html#refresh-after-git-push",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Refresh after git push",
+    "text": "Refresh after git push"
+  },
+  {
+    "objectID": "w03/slides.html#commit-history",
+    "href": "w03/slides.html#commit-history",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Commit History",
+    "text": "Commit History"
+  },
+  {
+    "objectID": "w03/slides.html#checking-the-diff",
+    "href": "w03/slides.html#checking-the-diff",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Checking the diff",
+    "text": "Checking the diff"
+  },
+  {
+    "objectID": "w03/slides.html#web-development",
+    "href": "w03/slides.html#web-development",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Web Development",
+    "text": "Web Development\n\n\n\n\n\n\n\n\n\nFrontend   \nBackend   \n\n\n\n\nLow Level\nHTML/CSS/JavaScript\nGitHub Pages\n\n\nMiddle Level\nJS Libraries\nPHP, SQL\n\n\nHigh Level\nReact, Next.js\nNode.js, Vercel\n\n\n\n\nFrontend icons: UI+UI elements, what the user sees (on the screen), user experience (UX), data visualization Backend icons: Databases, Security"
+  },
+  {
+    "objectID": "w03/slides.html#getting-content-onto-the-internet",
+    "href": "w03/slides.html#getting-content-onto-the-internet",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Getting Content onto the Internet",
+    "text": "Getting Content onto the Internet\n\n\n\n\nStep 1: index.html\n\n\nStep 2: Create GitHub repository\n\n\nStep 3: git init, git add -A ., git push\n\n\nStep 4: Enable GitHub Pages in repo settings\n\n\nStep 5: &lt;username&gt;.github.io!"
+  },
+  {
+    "objectID": "w03/slides.html#deploying-from-a-branchfolder",
+    "href": "w03/slides.html#deploying-from-a-branchfolder",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Deploying from a Branch/Folder",
+    "text": "Deploying from a Branch/Folder"
+  },
+  {
+    "objectID": "w03/slides.html#lab-demonstration-1-transferring-files",
+    "href": "w03/slides.html#lab-demonstration-1-transferring-files",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Lab Demonstration 1: Transferring Files",
+    "text": "Lab Demonstration 1: Transferring Files"
+  },
+  {
+    "objectID": "w03/slides.html#lab-demonstration-2-quarto",
+    "href": "w03/slides.html#lab-demonstration-2-quarto",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Lab Demonstration 2: Quarto",
+    "text": "Lab Demonstration 2: Quarto"
+  },
+  {
+    "objectID": "w03/slides.html#lab-demonstration-3-git-and-github",
+    "href": "w03/slides.html#lab-demonstration-3-git-and-github",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Lab Demonstration 3: Git and GitHub",
+    "text": "Lab Demonstration 3: Git and GitHub"
+  },
+  {
+    "objectID": "w03/slides.html#assignment-overview",
+    "href": "w03/slides.html#assignment-overview",
+    "title": "Week 3: Data Science Workflow",
+    "section": "Assignment Overview",
+    "text": "Assignment Overview\n\nCreate a repo on your private GitHub account called 5000-lab-1.2\nClone the repo to your local machine with git clone\nCreate a blank Quarto website project, then use a .bib file to add citations\nAdd content to index.qmd\nAdd content to about.ipynb\nBuild a simple presentation in slides/slides.ipynb using the revealjs format\nRender the website using quarto render\nSync your changes to GitHub\nUse rsync or scp to copy the _site directory to your GU domains server (within ~/public_html)\nCreate a Zotero (or Mendeley) account, download the software, and add at least one reference to your site by syncing the .bib file"
+  },
+  {
+    "objectID": "w03/slides.html#references",
+    "href": "w03/slides.html#references",
+    "title": "Week 3: Data Science Workflow",
+    "section": "References",
+    "text": "References\n\n\nBaker, Monya. 2016. “1,500 Scientists Lift the Lid on Reproducibility.” Nature 533 (7604): 452–54. https://doi.org/10.1038/533452a.\n\n\nMenczer, Filippo, Santo Fortunato, and Clayton A. Davis. 2020. A First Course in Network Science. Cambridge University Press."
+  },
+  {
+    "objectID": "about-slides.html#prof.-jeff-introduction",
+    "href": "about-slides.html#prof.-jeff-introduction",
+    "title": "",
+    "section": "Prof. Jeff Introduction!",
+    "text": "Prof. Jeff Introduction!\n\nBorn and raised in NW DC → high school in Rockville, MD\nUniversity of Maryland: Computer Science, Math, Economics (2008-2012)"
+  },
+  {
+    "objectID": "about-slides.html#grad-school",
+    "href": "about-slides.html#grad-school",
+    "title": "",
+    "section": "Grad School",
+    "text": "Grad School\n\nStudied abroad in Beijing (Peking University/北大) → internship with Huawei in Hong Kong (HKUST)\n\n\n\n\nStanford for MS in Computer Science (2012-2014)\nResearch Economist at UC Berkeley (2014-2015)\n\n\n\n\n\n\nColumbia (NYC) for PhD[+Postdoc] in Political Science (2015-2023)"
+  },
+  {
+    "objectID": "about-slides.html#dissertation-political-science-history",
+    "href": "about-slides.html#dissertation-political-science-history",
+    "title": "",
+    "section": "Dissertation (Political Science + History)",
+    "text": "Dissertation (Political Science + History)\n“Our Word is Our Weapon”: Text-Analyzing Wars of Ideas from the French Revolution to the First Intifada"
+  },
+  {
+    "objectID": "about-slides.html#research-labor-economics",
+    "href": "about-slides.html#research-labor-economics",
+    "title": "",
+    "section": "Research (Labor Economics)",
+    "text": "Research (Labor Economics)\n\n“Monopsony in Online Labor Markets”\n\nMachine Learning to enhance causal estimates of the effect of job description language on uptake rate\n\n“Unsupervised Extraction of Workplace Rights and Duties from Collective Bargaining Agreements”\n\nLinguistic (dependency) parses of CBAs → time series of worker vs. employer rights and responsibilities over time\n\n“Freedom as Non-Domination in the Labor Market”\n\nGame-theoretic models of Douglassian (republican) liberty1 for workers: monopsony vs. labor discipline\n\n\n\n\n\n\n\n\n\n\nFrederick Douglass: “It was slavery itself, not its mere incidents, that I hated.”"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "",
@@ -47,41 +719,6 @@
     "title": "",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nFrederick Douglass: “It was slavery itself, not its mere incidents, that I hated.”↩︎"
-  },
-  {
-    "objectID": "about-slides.html#prof.-jeff-introduction",
-    "href": "about-slides.html#prof.-jeff-introduction",
-    "title": "",
-    "section": "Prof. Jeff Introduction!",
-    "text": "Prof. Jeff Introduction!\n\nBorn and raised in NW DC → high school in Rockville, MD\nUniversity of Maryland: Computer Science, Math, Economics (2008-2012)"
-  },
-  {
-    "objectID": "about-slides.html#grad-school",
-    "href": "about-slides.html#grad-school",
-    "title": "",
-    "section": "Grad School",
-    "text": "Grad School\n\nStudied abroad in Beijing (Peking University/北大) → internship with Huawei in Hong Kong (HKUST)\n\n\n\n\nStanford for MS in Computer Science (2012-2014)\nResearch Economist at UC Berkeley (2014-2015)\n\n\n\n\n\n\nColumbia (NYC) for PhD[+Postdoc] in Political Science (2015-2023)"
-  },
-  {
-    "objectID": "about-slides.html#dissertation-political-science-history",
-    "href": "about-slides.html#dissertation-political-science-history",
-    "title": "",
-    "section": "Dissertation (Political Science + History)",
-    "text": "Dissertation (Political Science + History)\n“Our Word is Our Weapon”: Text-Analyzing Wars of Ideas from the French Revolution to the First Intifada"
-  },
-  {
-    "objectID": "about-slides.html#research-labor-economics",
-    "href": "about-slides.html#research-labor-economics",
-    "title": "",
-    "section": "Research (Labor Economics)",
-    "text": "Research (Labor Economics)\n\n“Monopsony in Online Labor Markets”\n\nMachine Learning to enhance causal estimates of the effect of job description language on uptake rate\n\n“Unsupervised Extraction of Workplace Rights and Duties from Collective Bargaining Agreements”\n\nLinguistic (dependency) parses of CBAs → time series of worker vs. employer rights and responsibilities over time\n\n“Freedom as Non-Domination in the Labor Market”\n\nGame-theoretic models of Douglassian (republican) liberty1 for workers: monopsony vs. labor discipline\n\n\n\n\n\n\n\n\n\n\nFrederick Douglass: “It was slavery itself, not its mere incidents, that I hated.”"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DSAN 5000, Section 03 (Wednesdays)",
-    "section": "",
-    "text": "This is a “hub” collecting relevant links for each week, for students in Prof. Jeff’s Wednesday section (Section 03) of DSAN 5000: Data Science and Analytics, Fall 2023 at Georgetown University.\nIt is not a replacement for the Main Course Page or the Canvas Page, which are shared across all sections!\nUse the menu on the left, or the table below, to view the resources for a specific week.\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nWeek 1: Welcome to DSAN 5000!\n\n\nWednesday, August 23, 2023\n\n\n\n\nWeek 2: Data Science Fundamentals and Workflow\n\n\nWednesday, August 30, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "week01.html",

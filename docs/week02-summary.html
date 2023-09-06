@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSAN 5000, Section 03 (Wednesdays)</title>
+<title>Week 2 Summary: Data Science Fundamentals and Workflow</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -61,38 +59,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -106,7 +73,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Section 03 Home</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      DSAN 5000 Section 03 (Wednesdays, 3:30pm-6pm)&lt;br&gt;&lt;span class="subtitle"&gt;Car Barn 203&lt;/span&gt;&lt;br&gt;&lt;span class="subtitle"&gt;Fall 2023, Georgetown&lt;/span&gt;&lt;br&gt;&lt;span class="subtitle"&gt;Prof. Jeff &lt;a href="mailto:jj1088@georgetown.edu" target="_blank"&gt;&lt;i class="bi bi-envelope-at ps-1 pe-1"&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href="https://github.com/jpowerj" target="_blank"&gt;&lt;i class="bi bi-github ps-1"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;
+      </li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -140,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Section 03 Home</span></a>
   </div>
 </li>
@@ -187,21 +156,37 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#computer-fundamentals" id="toc-computer-fundamentals" class="nav-link active" data-scroll-target="#computer-fundamentals">Computer Fundamentals</a></li>
+  <li><a href="#coding-fundamentals" id="toc-coding-fundamentals" class="nav-link" data-scroll-target="#coding-fundamentals">Coding Fundamentals</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DSAN 5000, Section 03 (Wednesdays)</h1>
-</div>
+<h1 class="title">Week 2 Summary: Data Science Fundamentals and Workflow</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Class Summaries</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Wednesday, August 30, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -209,61 +194,38 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This is a “hub” collecting relevant links for each week, for students in Prof.&nbsp;Jeff’s <strong>Wednesday section (Section 03)</strong> of <em>DSAN 5000: Data Science and Analytics</em>, Fall 2023 at Georgetown University.</p>
-<p>It is <em>not</em> a replacement for the <strong><a href="https://jfh.georgetown.domains/dsan5000/" target="_blank">Main Course Page</a></strong> or the <strong><a href="https://georgetown.instructure.com/courses/173310" target="_blank">Canvas Page</a></strong>, which are shared across all sections!</p>
-<p>Use the menu on the left, or the table below, to view the resources for a specific week.</p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-
-<table class="quarto-listing-table table table-hover">
-<thead>
-<tr>
-<th>
-Title
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="Class Sessions" data-listing-date-sort="1692763200000" data-listing-file-modified-sort="1693296225128" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Week 1: Welcome to DSAN 5000!" data-listing-filename-sort="week01.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<a href="./week01.html" class="title listing-title">Week 1: Welcome to DSAN 5000!</a>
-</td>
-<td>
-<span class="listing-date">Wednesday, August 23, 2023</span>
-</td>
-</tr>
-<tr data-index="1" data-categories="Class Sessions" data-listing-date-sort="1693368000000" data-listing-file-modified-sort="1693362969856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Week 2: Data Science Fundamentals and Workflow" data-listing-filename-sort="week02.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<a href="./week02.html" class="title listing-title">Week 2: Data Science Fundamentals and Workflow</a>
-</td>
-<td>
-<span class="listing-date">Wednesday, August 30, 2023</span>
-</td>
-</tr>
-<tr data-index="2" data-categories="Class Sessions" data-listing-date-sort="1693972800000" data-listing-file-modified-sort="1694028232524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-title-sort="Week 3: Data Science Workflow" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<a href="./w03/index.html" class="title listing-title">Week 3: Data Science Workflow</a>
-</td>
-<td>
-<span class="listing-date">Wednesday, September 6, 2023</span>
-</td>
-</tr>
-</tbody>
-
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</div></main> <!-- /main -->
+<div class="callout-title-container flex-fill">
+Today’s Links
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><a class="icon-link" href="https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/slides/computer-fundamentals/notes.html" target="_blank"><i class="bi bi-journals pe-1"></i>Week 2 Lecture Notes</a></li>
+<li><a class="icon-link" href="https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/slides/demo-gu-domains-CLI/notes.html" target="_blank"><i class="bi bi-laptop pe-1"></i>Lab 1 Home</a></li>
+</ul>
+</div>
+</div>
+<section id="computer-fundamentals" class="level2">
+<h2 class="anchored" data-anchor-id="computer-fundamentals">Computer Fundamentals</h2>
+<ul>
+<li>Memory: RAM vs.&nbsp;Hard drive</li>
+<li>Where does the data live?</li>
+<li>Unix vs.&nbsp;Linux vs.&nbsp;Mac vs.&nbsp;Windows</li>
+<li>Filesystem: / as root, ~ as home dir, . as current dir, .. as dir one level above</li>
+</ul>
+</section>
+<section id="coding-fundamentals" class="level2">
+<h2 class="anchored" data-anchor-id="coding-fundamentals">Coding Fundamentals</h2>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
