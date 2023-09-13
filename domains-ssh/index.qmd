@@ -1,6 +1,0 @@
----
-title: "Troubleshooting SSH/SCP/rsync on Georgetown Domains"
-date: last-modified
-categories:
-  - "Extra Writeups"
----

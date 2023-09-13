@@ -1,9 +1,11 @@
 ---
 title: "Homework 1 Clarifications"
-format: html
 date: last-modified
+format:
+  html:
+    cache: false
 categories:
-  - "Extra Writeups"
+  - "Clarifications"
 ---
 
 ::: {.callout-tip title="Relevant Links"}
