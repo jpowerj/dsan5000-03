@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: docs/463a01339cf0f456ba54a1849df50d1a22c247e3
   post-render:
     - _pw_protect.py
 
