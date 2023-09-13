@@ -1,0 +1,14 @@
+---
+title: "Extra Writeups"
+listing:
+  sort-ui: false
+  filter-ui: false
+  type: table
+  include:
+    categories: "{Extra Writeups}"
+  fields: [title,date]
+  sort: "lecnum asc"
+  table-hover: true
+  date-format: full
+---
+

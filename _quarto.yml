@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  post-render:
+    - _pw_protect.py
 
 website:
   title: ""
@@ -20,6 +22,11 @@ website:
         text: "Week 2: Aug 30"
       - href: w03/index.qmd
         text: "Week 3: Sep 6"
+      - href: w04/index.qmd
+        text: "Week 4: Sep 13"
+      - "---"
+      - href: writeups/index.qmd
+        text: "Extra Writeups"
       - "---"
       - href: "https://forms.gle/TH1yLitU9dTfB4sg8"
         text: "Suggestion Box <i class=\"bi bi-box-arrow-up-right ps-1\"></i>"

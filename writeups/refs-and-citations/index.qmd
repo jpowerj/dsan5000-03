@@ -1,0 +1,45 @@
+---
+title: "Using Quarto's Reference/Citation Manager"
+date: last-modified
+categories:
+  - "Extra Writeups"
+format:
+  html:
+    cache: false
+---
+
+For your homework and your project, we ask you to carry out two specific steps to integrate **references** into your Quarto documents:
+
+1. Obtain references to scholarly papers/books,
+2. Combine information about these references into a `references.bib` file, and
+3. Include **citations** to these references within your Quarto document.
+
+This walkthrough will show you the details of each step.
+
+First things first, there are many ways to obtain references, and many formats that the references can come in, but the format used by Quarto is called **BibTeX**. Long story short, there two ways to obtain **BibTeX-style reference info** for a given paper or book. The first way (using **Google Scholar**) is simple, and will let you immediately generate a `references.bib` file. The second way (using a **reference manager** like Zotero or Mendeley) takes a bit longer to get set up, but will save you SO much time in the long run. I'll start with the Google Scholar approach, but I highly recommend reading onwards to learn the Zotero/Mendeley approach as well.
+
+## Simple But Non-Scalable Method: Google Scholar
+
+### Step 1: Obtaining References
+
+An easy way to quickly obtain references in a format where you can immediately cite them in your Quarto documents is to use [Google Scholar](https://scholar.google.com){target="_blank"}. If you open that link, and search for a topic you're interested in, it should show you a big list of results that looks like:
+
+![Results from searching for "Einstein" on Google Scholar](images/einstein.jpeg){#fig-einstein}
+
+Now, if you choose one of these references and click the "Cite" button at the bottom of the result, it should display a popup (modal) dialog that looks like the following:
+
+![The popup (modal) dialog which comes up if you click the "Cite" link at the bottom of the Google Scholar result](images/cite_popup.jpeg){#fig-cite-popup}
+
+Now, if you click on the "BibTeX" link, the first link at the bottom of this popup (modal) window, it should immediately open a new tab containing a plaintext version of the **BibTeX data** for this reference, like:
+
+![The BibTeX data for the selected reference, obtained by clicking the "BibTeX" link at the bottom of the "Cite" popup](images/bibtex_data.jpeg)
+
+::: {.callout-tip appearance="simple"}
+
+If you don't see this plaintext data, that probably means that your browser is set to **download** rather than just **display** .bib files, so just look in your Downloads folder for the downloaded file (it might have some weird name, and it might not have a `.bib` extension, but that's ok, it will still open in a text editor like VSCode), open it in a text editor, and it should contain exactly the above data.
+
+:::
+
+However you end up with this plaintext reference data, **copy and paste it** into a new text file (in VSCode, you can create a new plaintext file using `Cmd`+`N`), and **save this file** as **`references.bib`**.
+
+That's it! You now have a fully-fledged `references.bib` file! It only contains one reference at the moment, but we can quickly add more by repeating the above process: find another reference you'd like to cite, 

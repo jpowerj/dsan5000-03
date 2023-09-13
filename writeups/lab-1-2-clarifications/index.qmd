@@ -1,0 +1,8 @@
+---
+title: "Lab 1.2 Clarifications"
+format: html
+categories:
+  - "Extra Writeups"
+---
+
+Lab 1.2 Link

@@ -1,0 +1,9 @@
+---
+title: "Homework 1 Clarifications"
+format: html
+categories:
+  - "Extra Writeups"
+---
+
+Homework 1 Link
+
