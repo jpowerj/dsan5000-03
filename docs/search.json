@@ -116,7 +116,7 @@
     "href": "w04/slides.html#data-structures-simple-rightarrow-complex",
     "title": "Week 4: Data Gathering and APIs",
     "section": "Data Structures: Simple \\(\\rightarrow\\) Complex",
-    "text": "Data Structures: Simple \\(\\rightarrow\\) Complex\n\n\n\n\n\n\n\nid\nname\nemail\n\n\n\n\n0\nK. Desbrow\nkd9@dailymail.com\n\n\n1\nD. Minall\ndminall1@wired.com\n\n\n2\nC. Knight\nck2@microsoft.com\n\n\n3\nM. McCaffrey\nmccaf4@nhs.uk\n\n\n\nFigure 2: Record Data\n\n\n\n\n\n\n\nyear\nmonth\npoints\n\n\n\n\n2023\nJan\n65\n\n\n2023\nFeb\n\n\n\n2023\nMar\n42\n\n\n2023\nApr\n11\n\n\n\nFigure 3: Time-Series Data\n\n\n\n\n\n\n\n\n\nid\ndate\nrating\nnum_rides\n\n\n\n\n0\n2023-01\n0.75\n45\n\n\n0\n2023-02\n0.89\n63\n\n\n0\n2023-03\n0.97\n7\n\n\n1\n2023-06\n0.07\n10\n\n\n\nFigure 4: Panel Data\n\n\n\n\n\n\n\nSource\nTarget\nWeight\n\n\n\n\nIGF2\nIGF1R\n1\n\n\nIGF1R\nTP53\n2\n\n\nTP53\nEGFR\n0.5\n\n\n\nFigure 5: Network Data\n\n\n\n\n\n\nFake data via Mockaroo and Random.org. Protein-protein interaction network from (agrawal_largescale_2018?)"
+    "text": "Data Structures: Simple \\(\\rightarrow\\) Complex\n\n\n\n\n\n\n\nid\nname\nemail\n\n\n\n\n0\nK. Desbrow\nkd9@dailymail.com\n\n\n1\nD. Minall\ndminall1@wired.com\n\n\n2\nC. Knight\nck2@microsoft.com\n\n\n3\nM. McCaffrey\nmccaf4@nhs.uk\n\n\n\nFigure 2: Record Data\n\n\n\n\n\n\n\nyear\nmonth\npoints\n\n\n\n\n2023\nJan\n65\n\n\n2023\nFeb\n\n\n\n2023\nMar\n42\n\n\n2023\nApr\n11\n\n\n\nFigure 3: Time-Series Data\n\n\n\n\n\n\n\n\n\nid\ndate\nrating\nnum_rides\n\n\n\n\n0\n2023-01\n0.75\n45\n\n\n0\n2023-02\n0.89\n63\n\n\n0\n2023-03\n0.97\n7\n\n\n1\n2023-06\n0.07\n10\n\n\n\nFigure 4: Panel Data\n\n\n\n\n\n\n\nSource\nTarget\nWeight\n\n\n\n\nIGF2\nIGF1R\n1\n\n\nIGF1R\nTP53\n2\n\n\nTP53\nEGFR\n0.5\n\n\n\nFigure 5: Network Data\n\n\n\n\n\n\nFake data via Mockaroo and Random.org. Protein-protein interaction network from Agrawal, Zitnik, and Leskovec (2018)"
   },
   {
     "objectID": "w04/slides.html#tabular-data-vs.-relational-data",
@@ -235,7 +235,7 @@
     "href": "w04/slides.html#references",
     "title": "Week 4: Data Gathering and APIs",
     "section": "References",
-    "text": "References\n\n\nMenczer, Filippo, Santo Fortunato, and Clayton A. Davis. 2020. A First Course in Network Science. Cambridge University Press."
+    "text": "References\n\n\nAgrawal, Monica, Marinka Zitnik, and Jure Leskovec. 2018. “Large-Scale Analysis of Disease Pathways in the Human Interactome.” In PACIFIC SYMPOSIUM on BIOCOMPUTING 2018: Proceedings of the Pacific Symposium, 111–22. World Scientific.\n\n\nMenczer, Filippo, Santo Fortunato, and Clayton A. Davis. 2020. A First Course in Network Science. Cambridge University Press."
   },
   {
     "objectID": "w04/slides.html#scraping-html-with-httr2-and-xml2",
@@ -354,7 +354,7 @@
     "href": "w04/index.html#data-structures-simple-rightarrow-complex",
     "title": "Week 4: Data Gathering and APIs",
     "section": "Data Structures: Simple \\(\\rightarrow\\) Complex",
-    "text": "Data Structures: Simple \\(\\rightarrow\\) Complex\n\n\n\n\n\n\n\nid\nname\nemail\n\n\n\n\n0\nK. Desbrow\nkd9@dailymail.com\n\n\n1\nD. Minall\ndminall1@wired.com\n\n\n2\nC. Knight\nck2@microsoft.com\n\n\n3\nM. McCaffrey\nmccaf4@nhs.uk\n\n\n\nFigure 2: Record Data\n\n\n\n\n\n\n\nyear\nmonth\npoints\n\n\n\n\n2023\nJan\n65\n\n\n2023\nFeb\n\n\n\n2023\nMar\n42\n\n\n2023\nApr\n11\n\n\n\nFigure 3: Time-Series Data\n\n\n\n\n\n\n\n\n\nid\ndate\nrating\nnum_rides\n\n\n\n\n0\n2023-01\n0.75\n45\n\n\n0\n2023-02\n0.89\n63\n\n\n0\n2023-03\n0.97\n7\n\n\n1\n2023-06\n0.07\n10\n\n\n\nFigure 4: Panel Data\n\n\n\n\n\n\n\nSource\nTarget\nWeight\n\n\n\n\nIGF2\nIGF1R\n1\n\n\nIGF1R\nTP53\n2\n\n\nTP53\nEGFR\n0.5\n\n\n\nFigure 5: Network Data\n\n\n\n\n\n\nFake data via Mockaroo and Random.org. Protein-protein interaction network from (agrawal_largescale_2018?)"
+    "text": "Data Structures: Simple \\(\\rightarrow\\) Complex\n\n\n\n\n\n\n\nid\nname\nemail\n\n\n\n\n0\nK. Desbrow\nkd9@dailymail.com\n\n\n1\nD. Minall\ndminall1@wired.com\n\n\n2\nC. Knight\nck2@microsoft.com\n\n\n3\nM. McCaffrey\nmccaf4@nhs.uk\n\n\n\nFigure 2: Record Data\n\n\n\n\n\n\n\nyear\nmonth\npoints\n\n\n\n\n2023\nJan\n65\n\n\n2023\nFeb\n\n\n\n2023\nMar\n42\n\n\n2023\nApr\n11\n\n\n\nFigure 3: Time-Series Data\n\n\n\n\n\n\n\n\n\nid\ndate\nrating\nnum_rides\n\n\n\n\n0\n2023-01\n0.75\n45\n\n\n0\n2023-02\n0.89\n63\n\n\n0\n2023-03\n0.97\n7\n\n\n1\n2023-06\n0.07\n10\n\n\n\nFigure 4: Panel Data\n\n\n\n\n\n\n\nSource\nTarget\nWeight\n\n\n\n\nIGF2\nIGF1R\n1\n\n\nIGF1R\nTP53\n2\n\n\nTP53\nEGFR\n0.5\n\n\n\nFigure 5: Network Data\n\n\n\n\n\n\nFake data via Mockaroo and Random.org. Protein-protein interaction network from Agrawal, Zitnik, and Leskovec (2018)"
   },
   {
     "objectID": "w04/index.html#tabular-data-vs.-relational-data",
@@ -473,7 +473,7 @@
     "href": "w04/index.html#references",
     "title": "Week 4: Data Gathering and APIs",
     "section": "References",
-    "text": "References\n\n\nMenczer, Filippo, Santo Fortunato, and Clayton A. Davis. 2020. A First Course in Network Science. Cambridge University Press."
+    "text": "References\n\n\nAgrawal, Monica, Marinka Zitnik, and Jure Leskovec. 2018. “Large-Scale Analysis of Disease Pathways in the Human Interactome.” In PACIFIC SYMPOSIUM on BIOCOMPUTING 2018: Proceedings of the Pacific Symposium, 111–22. World Scientific.\n\n\nMenczer, Filippo, Santo Fortunato, and Clayton A. Davis. 2020. A First Course in Network Science. Cambridge University Press."
   },
   {
     "objectID": "w04/index.html#scraping-html-with-httr2-and-xml2",
