@@ -279,6 +279,13 @@ div.csl-indent {
   <li><a href="#math-api-endpoints" id="toc-math-api-endpoints" class="nav-link" data-scroll-target="#math-api-endpoints">Math API Endpoints</a></li>
   <li><a href="#authentication" id="toc-authentication" class="nav-link" data-scroll-target="#authentication">Authentication</a></li>
   <li><a href="#authentication-via-pygithub" id="toc-authentication-via-pygithub" class="nav-link" data-scroll-target="#authentication-via-pygithub">Authentication via <code>PyGithub</code></a></li>
+  </ul></li>
+  <li><a href="#lab-demonstrations" id="toc-lab-demonstrations" class="nav-link" data-scroll-target="#lab-demonstrations">Lab Demonstrations</a>
+  <ul class="collapse">
+  <li><a href="#wikipedia-api" id="toc-wikipedia-api" class="nav-link" data-scroll-target="#wikipedia-api">Wikipedia API</a></li>
+  <li><a href="#google-scholar-api" id="toc-google-scholar-api" class="nav-link" data-scroll-target="#google-scholar-api">Google Scholar API</a></li>
+  <li><a href="#news-api" id="toc-news-api" class="nav-link" data-scroll-target="#news-api">News API</a></li>
+  <li><a href="#lab-assignment-overview" id="toc-lab-assignment-overview" class="nav-link" data-scroll-target="#lab-assignment-overview">Lab Assignment Overview</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   <li><a href="#appendix-code-examples-in-r" id="toc-appendix-code-examples-in-r" class="nav-link" data-scroll-target="#appendix-code-examples-in-r">Appendix: Code Examples in R</a>
@@ -292,7 +299,7 @@ div.csl-indent {
   <li><a href="#authentication-via-gh" id="toc-authentication-via-gh" class="nav-link" data-scroll-target="#authentication-via-gh">Authentication via <code>GH</code></a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div><div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="github-auth.ipynb.html"><i class="bi bi-journal-code"></i>github-auth.ipynb</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -1655,8 +1662,8 @@ Logarithm   /log/2l8    3 -->
 <li>For example, you can access <strong>public GitHub repos</strong> anonymously, but to access <strong>private GitHub repos</strong> using GitHub’s API, you’ll need to authenticate that you are in fact the one making the request</li>
 </ul>
 </section>
-<section id="authentication-via-pygithub" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="authentication-via-pygithub">Authentication via <code>PyGithub</code></h2>
+<section id="authentication-via-pygithub" class="level2 smaller shift-footnotes">
+<h2 class="smaller shift-footnotes anchored" data-anchor-id="authentication-via-pygithub">Authentication via <code>PyGithub</code></h2>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="`PyGithub` Installation">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1676,34 +1683,65 @@ Logarithm   /log/2l8    3 -->
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-github-noauth" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import github</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># g = github.Github()</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># try:</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   g.get_repo("jpowerj/private-repo-test")</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># except Exception as e:</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(e)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-embed-nb-cell">
+<div id="pygithub-noauth" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="im">import</span> github</span>
+<span id="cb22-2"><a href="#cb22-2"></a>g <span class="op">=</span> github.Github()</span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="cf">try</span>:</span>
+<span id="cb22-4"><a href="#cb22-4"></a>    g.get_repo(<span class="st">"jpowerj/private-repo-test"</span>)</span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb22-6"><a href="#cb22-6"></a>    <span class="bu">print</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>404 {"message": "Not Found", "documentation_url": "https://docs.github.com/rest/repos/repos#get-a-repository"}</code></pre>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;19: Using the GitHub API <strong>without</strong> authentication</figcaption>
+</div>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;19: Using the GitHub API <strong>without</strong> authentication</figcaption><a class="quarto-notebook-link" id="nblink-1" href="github-auth.ipynb.html#pygithub-noauth">Source: github-auth.ipynb</a>
 </figure>
 </div>
 <div id="fig-gh-auth" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the access token securely</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># import os</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># my_access_token = os.getenv('GITHUB_TOKEN')</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># import github</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># # Use the access token to make an API request</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># auth = github.Auth.Token(my_access_token)</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># g = github.Github(auth=auth)</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># g.get_user().get_repo("private-repo-test")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-embed-nb-cell">
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Load the access token securely</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="im">import</span> dotenv</span>
+<span id="cb24-3"><a href="#cb24-3"></a>dotenv.load_dotenv(<span class="st">"../.env"</span>, override<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="im">import</span> os</span>
+<span id="cb24-5"><a href="#cb24-5"></a>my_access_token <span class="op">=</span> os.getenv(<span class="st">'GITHUB_TOKEN'</span>)</span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="im">import</span> github</span>
+<span id="cb24-7"><a href="#cb24-7"></a><span class="co"># Use the access token to make an API request</span></span>
+<span id="cb24-8"><a href="#cb24-8"></a>auth <span class="op">=</span> github.Auth.Token(my_access_token)</span>
+<span id="cb24-9"><a href="#cb24-9"></a>g <span class="op">=</span> github.Github(auth<span class="op">=</span>auth)</span>
+<span id="cb24-10"><a href="#cb24-10"></a>g.get_user().get_repo(<span class="st">"private-repo-test"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="pygithub-auth" class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>Repository(full_name="jpowerj/private-repo-test")</code></pre>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20: Using the GitHub API <strong>with</strong> authentication</figcaption>
+</div>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;20: Using the GitHub API <strong>with</strong> authentication</figcaption><a class="quarto-notebook-link" id="nblink-2" href="github-auth.ipynb.html">Source: github-auth.ipynb</a>
 </figure>
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="lab-demonstrations" class="level1" data-stack-name="Lab">
+<h1 data-stack-name="Lab">Lab Demonstrations</h1>
+<section id="wikipedia-api" class="level2">
+<h2 class="anchored" data-anchor-id="wikipedia-api">Wikipedia API</h2>
+<p><a href="https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/labs/code-demos/API-wikipedia/wikipedia-api.html" target="_blank">Wikipedia API Demo Link <i class="bi bi-box-arrow-up-right ps-1"></i></a></p>
+</section>
+<section id="google-scholar-api" class="level2">
+<h2 class="anchored" data-anchor-id="google-scholar-api">Google Scholar API</h2>
+<p><a href="https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/labs/code-demos/API-google-scholar/google-scholar-api.html" target="_blank">Google Scholar API Demo Link <i class="bi bi-box-arrow-up-right ps-1"></i></a></p>
+</section>
+<section id="news-api" class="level2">
+<h2 class="anchored" data-anchor-id="news-api">News API</h2>
+<p><a href="https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/labs/code-demos/API-newapi/news-api.html" target="_blank">News API Lab Demo Link <i class="bi bi-box-arrow-up-right ps-1"></i></a></p>
+</section>
+<section id="lab-assignment-overview" class="level2">
+<h2 class="anchored" data-anchor-id="lab-assignment-overview">Lab Assignment Overview</h2>
+<p><a href="https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/labs/assignments/lab-2.1/lab-2.1.html" target="_blank">Lab 2.1 <i class="bi bi-box-arrow-up-right ps-1"></i></a></p>
 </section>
 <section id="references" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="references">References</h2>
@@ -1726,12 +1764,12 @@ Menczer, Filippo, Santo Fortunato, and Clayton A. Davis. 2020. <em>A <span>First
 <div class="cell" data-layout-align="center">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get HTML</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>request_obj <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://en.wikipedia.org/wiki/Data_science"</span>)</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>response_obj <span class="ot">&lt;-</span> <span class="fu">req_perform</span>(request_obj)</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Parse HTML</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xml2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get HTML</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>request_obj <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://en.wikipedia.org/wiki/Data_science"</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>response_obj <span class="ot">&lt;-</span> <span class="fu">req_perform</span>(request_obj)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Parse HTML</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xml2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -1744,8 +1782,8 @@ Attaching package: 'xml2'</code></pre>
 </div>
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>html_obj <span class="ot">&lt;-</span> response_obj <span class="sc">%&gt;%</span> <span class="fu">resp_body_html</span>()</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>html_obj <span class="sc">%&gt;%</span> <span class="fu">xml_find_all</span>(<span class="st">'//h2//span[@class="mw-headline"]'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>html_obj <span class="ot">&lt;-</span> response_obj <span class="sc">%&gt;%</span> <span class="fu">resp_body_html</span>()</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>html_obj <span class="sc">%&gt;%</span> <span class="fu">xml_find_all</span>(<span class="st">'//h2//span[@class="mw-headline"]'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>{xml_nodeset (6)}
@@ -1767,7 +1805,7 @@ Attaching package: 'xml2'</code></pre>
 <ul>
 <li>Notice the last line on the previous slide:</li>
 </ul>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>html_obj <span class="sc">%&gt;%</span> <span class="fu">xml_find_all</span>(<span class="st">'//h2//span[@class="mw-headline"]'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>html_obj <span class="sc">%&gt;%</span> <span class="fu">xml_find_all</span>(<span class="st">'//h2//span[@class="mw-headline"]'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>The string passed to <code>xml_find_all()</code> is an <strong>XPath selector</strong></li>
 </ul>
@@ -1781,21 +1819,21 @@ Attaching package: 'xml2'</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>mypage.html</strong></pre>
 </div>
-<div class="sourceCode" id="cb30"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"container"</span><span class="kw">&gt;</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;h1&gt;</span>Header<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">"page-content"</span><span class="kw">&gt;</span>Content<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;img</span> <span class="er">class</span><span class="ot">=</span><span class="st">"footer-image m-5"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"footer.png"</span><span class="kw">&gt;</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"container"</span><span class="kw">&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;h1&gt;</span>Header<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">"page-content"</span><span class="kw">&gt;</span>Content<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;img</span> <span class="er">class</span><span class="ot">=</span><span class="st">"footer-image m-5"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"footer.png"</span><span class="kw">&gt;</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><p><code>'//div'</code> matches all elements <code>&lt;div&gt;</code> in the document:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"container"</span><span class="kw">&gt;</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;h1&gt;</span>Header<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">"page-content"</span><span class="kw">&gt;</span>Content<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;img</span> <span class="er">class</span><span class="ot">=</span><span class="st">"footer-image m-5"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"footer.png"</span><span class="kw">&gt;</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb33"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"container"</span><span class="kw">&gt;</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;h1&gt;</span>Header<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">"page-content"</span><span class="kw">&gt;</span>Content<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;img</span> <span class="er">class</span><span class="ot">=</span><span class="st">"footer-image m-5"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"footer.png"</span><span class="kw">&gt;</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><code>'//div//img'</code> matches <code>&lt;img&gt;</code> elements which are <strong>children of</strong> <code>&lt;div&gt;</code> elements:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">class</span><span class="ot">=</span><span class="st">"footer-image m-5"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"footer.png"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb34"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">class</span><span class="ot">=</span><span class="st">"footer-image m-5"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"footer.png"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
 <section id="xpath-ii-filtering-by-attributes" class="level2 smaller">
@@ -1804,19 +1842,19 @@ Attaching package: 'xml2'</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>mypage.html</strong></pre>
 </div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"container"</span><span class="kw">&gt;</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;h1&gt;</span>Header<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">"page-content"</span><span class="kw">&gt;</span>Content<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;img</span> <span class="er">class</span><span class="ot">=</span><span class="st">"footer-image m-5"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"footer.png"</span><span class="kw">&gt;</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"container"</span><span class="kw">&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;h1&gt;</span>Header<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">"page-content"</span><span class="kw">&gt;</span>Content<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;img</span> <span class="er">class</span><span class="ot">=</span><span class="st">"footer-image m-5"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"footer.png"</span><span class="kw">&gt;</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><p><code>'//p[id="page-content"]'</code> matches all <code>&lt;p&gt;</code> elements with id <code>page-content</code><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">"page-content"</span><span class="kw">&gt;</span>Content<span class="kw">&lt;/p&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb36"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">"page-content"</span><span class="kw">&gt;</span>Content<span class="kw">&lt;/p&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Matching <strong>classes</strong> is a bit trickier:</p>
 <p><span class="small-codeblock"><code>'//img[contains(concat(" ", normalize-space(@class), " "), " footer-image ")]'</code></span></p>
 <p>matches all <code>&lt;img&gt;</code> elements with <code>page-content</code> as one of their classes<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">class</span><span class="ot">=</span><span class="st">"footer-image m-5"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"footer.png"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb37"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">class</span><span class="ot">=</span><span class="st">"footer-image m-5"</span> <span class="er">src</span><span class="ot">=</span><span class="st">"footer.png"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
 <section id="example-math-api-1" class="level2">
@@ -1830,10 +1868,10 @@ Attaching package: 'xml2'</code></pre>
 <div class="cell" data-layout-align="center">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>request_obj <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://newton.vercel.app/api/v2/factor/x^2-1"</span>)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>response_obj <span class="ot">&lt;-</span> <span class="fu">req_perform</span>(request_obj)</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(response_obj <span class="sc">%&gt;%</span> <span class="fu">resp_body_string</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>request_obj <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://newton.vercel.app/api/v2/factor/x^2-1"</span>)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>response_obj <span class="ot">&lt;-</span> <span class="fu">req_perform</span>(request_obj)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(response_obj <span class="sc">%&gt;%</span> <span class="fu">resp_body_string</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>{"operation":"factor","expression":"x^2-1","result":"(x - 1) (x + 1)"}</code></pre>
@@ -1855,9 +1893,9 @@ Attaching package: 'xml2'</code></pre>
 <div class="cell" data-layout-align="center">
 <details open="">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gh)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">gh</span>(<span class="st">"GET /repos/jpowerj/private-repo-test"</span>)</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">paste0</span>(result<span class="sc">$</span>name, <span class="st">": "</span>,result<span class="sc">$</span>description))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gh)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">gh</span>(<span class="st">"GET /repos/jpowerj/private-repo-test"</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">paste0</span>(result<span class="sc">$</span>name, <span class="st">": "</span>,result<span class="sc">$</span>description))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>private-repo-test: Private repo example for DSAN5000</code></pre>
