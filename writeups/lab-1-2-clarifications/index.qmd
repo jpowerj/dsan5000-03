@@ -1,8 +1,14 @@
 ---
 title: "Lab 1.2 Clarifications"
 format: html
+date: last-modified
 categories:
   - "Extra Writeups"
 ---
 
-Lab 1.2 Link
+::: {.callout-tip title="Links"}
+
+[Lab 1.2 Link](https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/labs/assignments/lab-1.2/assignment.html){target="_blank"}
+
+:::
+
