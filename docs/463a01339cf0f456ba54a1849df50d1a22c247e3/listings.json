@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/writeups/index.html",
     "items": [
       "/writeups/domains-ssh/index.html",
       "/writeups/hw1-clarifications/index.html",
@@ -10,7 +10,7 @@
     ]
   },
   {
-    "listing": "/writeups/index.html",
+    "listing": "/index.html",
     "items": [
       "/writeups/domains-ssh/index.html",
       "/writeups/hw1-clarifications/index.html",

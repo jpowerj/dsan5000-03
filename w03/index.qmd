@@ -54,12 +54,12 @@ Today's Planned Schedule:
 
 | | Start | End | Topic | Recording |
 |:- |:- |:- |:- |:-:|
-| **Lecture** | 3:30pm | 4:00pm | <a href="#how-the-internet-works">How the Internet Works &rarr;</a> | <a href="./recording-w03-1.html" target="_blank"><i class="bi bi-film"></i></a> |
-| | 4:00pm | 4:30pm | <a href="#quarto-and-reproducible-research">Quarto and Reproducible Research &rarr;</a> | <a href="./recording-w03-2.html" target="_blank"><i class="bi bi-film"></i></a> |
-| | 4:30pm | 5:00pm | <a href="#git-and-github">Git and GitHub &rarr;</a> | <a href="./recording-w03-3.html" target="_blank"><i class="bi bi-film"></i></a> |
+| **Lecture** | 3:30pm | 4:00pm | <a href="#how-the-internet-works">How the Internet Works &rarr;</a> | <a href="../recordings/recording-w03-1.html" target="_blank"><i class="bi bi-film"></i></a> |
+| | 4:00pm | 4:30pm | <a href="#quarto-and-reproducible-research">Quarto and Reproducible Research &rarr;</a> | <a href="../recordings/recording-w03-2.html" target="_blank"><i class="bi bi-film"></i></a> |
+| | 4:30pm | 5:00pm | <a href="#git-and-github">Git and GitHub &rarr;</a> | <a href="../recordings/recording-w03-3.html" target="_blank"><i class="bi bi-film"></i></a> |
 | **Break!** | 5:00pm | 5:10pm | | | |
-| **Lab** | 5:10pm | 5:50pm | <a href="#lab-demonstrations">Lab Demonstrations &rarr;</a> | <a href="./recording-w03-4.html" target="_blank"><i class="bi bi-film"></i></a> |
-| | 5:50pm | 6:00pm | <a href="#lab-assignment-overview">Lab Assignment Overview &rarr;</a> | <a href="./recording-w03-5.html" target="_blank"><i class="bi bi-film"></i></a> |
+| **Lab** | 5:10pm | 5:50pm | <a href="#lab-demonstrations">Lab Demonstrations &rarr;</a> | <a href="../recordings/recording-w03-4.html" target="_blank"><i class="bi bi-film"></i></a> |
+| | 5:50pm | 6:00pm | <a href="#lab-assignment-overview">Lab Assignment Overview &rarr;</a> | <a href="../recordings/recording-w03-5.html" target="_blank"><i class="bi bi-film"></i></a> |
 
 : {tbl-colwidths="[14,12,12,50,12]"} 
 
