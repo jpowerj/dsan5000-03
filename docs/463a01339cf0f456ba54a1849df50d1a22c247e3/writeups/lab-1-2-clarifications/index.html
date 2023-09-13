@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 1.2 Clarifications</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      DSAN 5000 Section 03 (Wednesdays, 3:30pm-6pm)&lt;br&gt;&lt;span class="subtitle"&gt;Car Barn 203&lt;/span&gt;&lt;br&gt;&lt;span class="subtitle"&gt;Fall 2023, Georgetown&lt;/span&gt;&lt;br&gt;&lt;span class="subtitle"&gt;Prof. Jeff &lt;a href="mailto:jj1088@georgetown.edu" target="_blank"&gt;&lt;i class="bi bi-envelope-at ps-1 pe-1"&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href="https://github.com/jpowerj" target="_blank"&gt;&lt;i class="bi bi-github ps-1"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;
+      </li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">DSAN 5000 Section 03 (Wednesdays, 3:30pm-6pm)<br><span class="subtitle">Car Barn 203</span><br><span class="subtitle">Fall 2023, Georgetown</span><br><span class="subtitle">Prof.&nbsp;Jeff <a href="mailto:jj1088@georgetown.edu" target="_blank"><i class="bi bi-envelope-at ps-1 pe-1"></i></a><a href="https://github.com/jpowerj" target="_blank"><i class="bi bi-github ps-1"></i></a></span></a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://jfh.georgetown.domains/dsan5000/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><i class="bi bi-arrow-left" style="margin-right: 4px"></i>Main Course Page</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Section 03 Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../about.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About Me</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../week01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1: Aug 23</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../week02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2: Aug 30</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../w03/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3: Sep 6</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../w04/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4: Sep 13</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../writeups/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extra Writeups</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://georgetown.instructure.com/courses/173310" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Canvas Page <i class="bi bi-box-arrow-up-right ps-1"></i></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://calendar.app.google/yMnESMtMNPdKEaPz5" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Book Office Hours <i class="bi bi-box-arrow-up-right ps-1"></i></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://forms.gle/TH1yLitU9dTfB4sg8" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Suggestion Box <i class="bi bi-box-arrow-up-right ps-1"></i></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#component-3-multiple-versions-of-the-about-page" id="toc-component-3-multiple-versions-of-the-about-page" class="nav-link active" data-scroll-target="#component-3-multiple-versions-of-the-about-page">Component-3: Multiple Versions of the About Page</a>
+  <ul class="collapse">
+  <li><a href="#making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml" id="toc-making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml" class="nav-link" data-scroll-target="#making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml">Making sure you have added both <code>href</code> and <code>text</code> data when updating <code>_quarto.yml</code></a></li>
+  <li><a href="#specifying-the-output-format-for-about.ipynb" id="toc-specifying-the-output-format-for-about.ipynb" class="nav-link" data-scroll-target="#specifying-the-output-format-for-about.ipynb">Specifying the output format for <code>about.ipynb</code></a></li>
+  <li><a href="#removing-the-about.qmd-file" id="toc-removing-the-about.qmd-file" class="nav-link" data-scroll-target="#removing-the-about.qmd-file">Removing the <code>about.qmd</code> file</a></li>
+  </ul></li>
+  <li><a href="#component-4-and-component-5-lorem-ipsum-text" id="toc-component-4-and-component-5-lorem-ipsum-text" class="nav-link" data-scroll-target="#component-4-and-component-5-lorem-ipsum-text">Component-4 and Component-5: Lorem Ipsum Text</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 1.2 Clarifications</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Clarifications</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Wednesday Sep 13, 2023, 01:25:52</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-tip callout-titled" title="Links">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Links
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/labs/assignments/lab-1.2/assignment.html" target="_blank">Lab 1.2 Link</a></p>
+</div>
+</div>
+<section id="component-3-multiple-versions-of-the-about-page" class="level2">
+<h2 class="anchored" data-anchor-id="component-3-multiple-versions-of-the-about-page">Component-3: Multiple Versions of the About Page</h2>
+<p>There is a step in Component-3 which asks you to:</p>
+<ul>
+<li>Convert <code>about.qmd</code> to <code>about.ipynb</code> with <code>quarto convert about.qmd</code>.</li>
+</ul>
+<p>After which (the last bullet in the section) it also asks you to</p>
+<ul>
+<li>modify <code>_quarto.yml</code> accordingly <code>- about.qmd</code> -&gt; <code>about.ipynb</code></li>
+</ul>
+<p>Please note the following points about these two steps:</p>
+<section id="making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml" class="level3">
+<h3 class="anchored" data-anchor-id="making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml">Making sure you have added both <code>href</code> and <code>text</code> data when updating <code>_quarto.yml</code></h3>
+<ul>
+<li>When you go to modify <code>_quarto.yml</code>, you’ll notice that the <strong>Home</strong> link is specified using two pieces of information, <code>href</code> and <code>text</code>:</li>
+</ul>
+<pre><code>      - href: index.qmd
+        text: Home</code></pre>
+<ul>
+<li>However, the <strong>About</strong> link is specified using a single bullet point, just indicating the name of the file:</li>
+</ul>
+<pre><code>      - about.qmd</code></pre>
+<ul>
+<li>So, when you go to update <code>_quarto.yml</code> to change <code>about.qmd</code> to <code>about.ipynb</code>, make sure that you include <strong>both</strong> pieces of information given for the <strong>Home</strong> link, so that your new link information should now be:</li>
+</ul>
+<pre><code>      - href: index.qmd
+        text: Home
+      - href: about.ipynb
+        text: About</code></pre>
+</section>
+<section id="specifying-the-output-format-for-about.ipynb" class="level3">
+<h3 class="anchored" data-anchor-id="specifying-the-output-format-for-about.ipynb">Specifying the output format for <code>about.ipynb</code></h3>
+<ul>
+<li>After running <code>quarto convert about.qmd</code>, you can open the generated <code>about.ipynb</code> file to view the result.</li>
+<li>However, you’ll see that the <strong>metadata block</strong> at the top of the file (the block which starts and ends with <code>---</code>) only contains the <code>title</code> attribute. That is, the top of the file will look like the following:</li>
+</ul>
+<pre><code>---
+title: "About"
+---</code></pre>
+<ul>
+<li>But, for your website to correctly render this <code>.ipynb</code> file, you’ll need to also add information to this metadata block telling Quarto that you’d like it to output <strong>HTML code</strong> when it renders <code>about.ipynb</code> for your website.</li>
+<li>To achieve this, add an additional line within the metadata block (i.e., between the starting <code>---</code> and the ending <code>---</code>), after the <code>title: "About"</code> line, specifying <code>format: html</code>. If you’ve done this correctly, your metadata block will now look like the following:</li>
+</ul>
+<pre><code>---
+title: "About"
+format: html
+---</code></pre>
+<ul>
+<li>Once you have added this additional piece of metadata, and saved your changes to the <code>about.ipynb</code> file, you will be halfway to successfully rendering this file as a page within your website. For the second half, see the next point.</li>
+</ul>
+</section>
+<section id="removing-the-about.qmd-file" class="level3">
+<h3 class="anchored" data-anchor-id="removing-the-about.qmd-file">Removing the <code>about.qmd</code> file</h3>
+<ul>
+<li>If you try to <code>quarto render</code> and/or <code>quarto preview</code> the website now, you may find that clicking the “About” link at the top of the page will show just the raw text content of the <code>about.ipynb</code> file, rather than the <strong>rendered</strong>, nicely-formatted and human-readable version. That is, when you click the “About” link, you may just see a plaintext file with the following contents:</li>
+</ul>
+<pre><code>{
+  "cells": [
+    {
+      "cell_type": "raw",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"About\"\n",
+        "format: html\n",
+        "---"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "About this site"
+      ]
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3 (ipykernel)",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 4
+}</code></pre>
+<ul>
+<li>If you encounter this issue, you can fix it by resolving the ambiguity that Quarto faces in having both <code>about.qmd</code> and <code>about.ipynb</code> files, and not knowing which one to choose as the file that should be rendered to create the final <code>about.html</code> file, the file that will be placed in the <code>_site</code> directory that <code>quarto render</code> creates.</li>
+<li>To resolve this ambiguity,
+<ul>
+<li>First, if you’re paranoid about losing the information in <code>about.qmd</code>, you can back this file up to another folder on your computer.</li>
+<li>Then (or, you can start here if you’re not worried about losing <code>about.qmd</code>), delete the original <code>about.qmd</code> file.</li>
+</ul></li>
+<li>Deleting the original <code>about.qmd</code> file will thus ensure that Quarto has a single <code>about</code> file (in this case, <code>about.ipynb</code>) that it knows is the file you want Quarto to render and show when a user clicks the “About” link.</li>
+</ul>
+</section>
+</section>
+<section id="component-4-and-component-5-lorem-ipsum-text" class="level2">
+<h2 class="anchored" data-anchor-id="component-4-and-component-5-lorem-ipsum-text">Component-4 and Component-5: Lorem Ipsum Text</h2>
+<p>In one of the bullets in both the Component-4 section and Component-5 section of the lab, it mentions the following:</p>
+<ul>
+<li><strong>Note</strong>: Use of <code>ipsum lorem</code> place-holder text is allowed</li>
+</ul>
+<p>What this means is just: If you would like “filler text” for your <code>index.qmd</code> page, to show what it will look like once it’s filled with content (but without having to write hundreds of words of content yourself), you can use a <a href="https://loremipsum.io/" target="_blank">“Lorem Ipsum text generator”</a> to auto-generate some number of paragraphs (filled with random Latin words), and place this auto-generated text in your <code>index.qmd</code> file.</p>
+<p>To see why you might want to do this, consider the difference between the following structure with no filler text:</p>
+<div class="callout callout-style-simple callout-note callout-titled" title="Section Headers *Without* Filler Content">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Section Headers <em>Without</em> Filler Content
+</div>
+</div>
+<section id="my-heading" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="my-heading">My Heading</h3>
+<section id="my-subheading" class="level4">
+<h4 class="anchored" data-anchor-id="my-subheading">My Subheading</h4>
+</section>
+<section id="another-subheading" class="level4">
+<h4 class="anchored" data-anchor-id="another-subheading">Another Subheading</h4>
+</section>
+<section id="third-subheading" class="level4">
+<h4 class="anchored" data-anchor-id="third-subheading">Third Subheading</h4>
+</section>
+</section>
+</div>
+<p>And the same structure but “filled out” with paragraphs of randomly-generated text:</p>
+<div class="callout callout-style-simple callout-note callout-titled" title="Section Headers *With* Filler Content">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Section Headers <em>With</em> Filler Content
+</div>
+</div>
+<section id="my-heading-1" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="my-heading-1">My Heading</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed cras ornare arcu dui vivamus arcu felis. Dis parturient montes nascetur ridiculus mus. Tincidunt ornare massa eget egestas purus viverra. Porttitor massa id neque aliquam vestibulum morbi. Fringilla phasellus faucibus scelerisque eleifend. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Urna id volutpat lacus laoreet non. Sed pulvinar proin gravida hendrerit lectus a. Sed odio morbi quis commodo odio aenean sed adipiscing. Bibendum at varius vel pharetra vel turpis nunc. Nec dui nunc mattis enim ut tellus elementum sagittis. Nisl rhoncus mattis rhoncus urna neque viverra. Elit at imperdiet dui accumsan.</p>
+<section id="my-subheading-1" class="level4">
+<h4 class="anchored" data-anchor-id="my-subheading-1">My Subheading</h4>
+<p>Porta non pulvinar neque laoreet suspendisse interdum consectetur libero id. Laoreet sit amet cursus sit amet dictum sit amet justo. Vitae semper quis lectus nulla at volutpat. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Tellus elementum sagittis vitae et leo duis ut. Neque vitae tempus quam pellentesque. Cursus eget nunc scelerisque viverra mauris. Morbi leo urna molestie at. Convallis posuere morbi leo urna molestie at elementum. Non consectetur a erat nam. Sagittis nisl rhoncus mattis rhoncus urna neque viverra. Lorem sed risus ultricies tristique.</p>
+</section>
+<section id="another-subheading-1" class="level4">
+<h4 class="anchored" data-anchor-id="another-subheading-1">Another Subheading</h4>
+<p>Turpis massa sed elementum tempus egestas. Et netus et malesuada fames ac turpis. Diam maecenas ultricies mi eget mauris pharetra et ultrices neque. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Vulputate dignissim suspendisse in est. Ultricies mi quis hendrerit dolor magna eget est. Senectus et netus et malesuada fames. Aliquet porttitor lacus luctus accumsan tortor posuere ac. Et ligula ullamcorper malesuada proin libero nunc consequat. Nibh mauris cursus mattis molestie a iaculis. Sit amet commodo nulla facilisi nullam. Mollis nunc sed id semper risus in hendrerit. Sit amet massa vitae tortor condimentum lacinia. Ante in nibh mauris cursus. Aliquam purus sit amet luctus. Tincidunt arcu non sodales neque.</p>
+</section>
+<section id="third-subheading-1" class="level4">
+<h4 class="anchored" data-anchor-id="third-subheading-1">Third Subheading</h4>
+<p>Lorem ipsum dolor sit amet consectetur adipiscing. Tortor pretium viverra suspendisse potenti. Felis eget nunc lobortis mattis aliquam faucibus. Morbi tincidunt ornare massa eget egestas purus viverra. Et netus et malesuada fames ac turpis. Nunc id cursus metus aliquam eleifend. Imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. Dignissim diam quis enim lobortis scelerisque. Vel pretium lectus quam id leo in vitae turpis. Venenatis cras sed felis eget velit aliquet. Eu feugiat pretium nibh ipsum. Eu tincidunt tortor aliquam nulla facilisi.</p>
+</section>
+</section>
+</div>
+<p>If you think this second version looks nicer than the first, and shows more clearly how the headers <strong>separate out</strong> different pieces of content, you can use this “lorem ipsum” text as filler (until you replace it with your own original writing!).</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
