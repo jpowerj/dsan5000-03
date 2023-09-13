@@ -14,7 +14,7 @@ bibliography: "../_DSAN5000.bib"
 format:
   revealjs:
     html-math-method: mathjax
-    cache: true
+    cache: false
     scrollable: false
     slide-number: true
     output-file: slides.html
@@ -911,12 +911,12 @@ pip install PyGithub
 ```{python}
 #| label: pygithub-noauth
 #| echo: true
-import github
-g = github.Github()
-try:
-  g.get_repo("jpowerj/private-repo-test")
-except Exception as e:
-  print(e)
+# import github
+# g = github.Github()
+# try:
+#   g.get_repo("jpowerj/private-repo-test")
+# except Exception as e:
+#   print(e)
 ```
 
 Using the GitHub API **without** authentication
@@ -928,13 +928,13 @@ Using the GitHub API **without** authentication
 #| label: pygithub-auth
 #| echo: true
 # Load the access token securely
-import os
-my_access_token = os.getenv('GITHUB_TOKEN')
-import github
-# Use the access token to make an API request
-auth = github.Auth.Token(my_access_token)
-g = github.Github(auth=auth)
-g.get_user().get_repo("private-repo-test")
+# import os
+# my_access_token = os.getenv('GITHUB_TOKEN')
+# import github
+# # Use the access token to make an API request
+# auth = github.Auth.Token(my_access_token)
+# g = github.Github(auth=auth)
+# g.get_user().get_repo("private-repo-test")
 ```
 
 Using the GitHub API **with** authentication

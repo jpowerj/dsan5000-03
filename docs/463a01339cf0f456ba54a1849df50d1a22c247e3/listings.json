@@ -1,0 +1,20 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/week01.html",
+      "/week02.html",
+      "/w03/index.html",
+      "/w04/index.html"
+    ]
+  },
+  {
+    "listing": "/writeups/index.html",
+    "items": [
+      "/writeups/domains-ssh/index.html",
+      "/writeups/hw1-clarifications/index.html",
+      "/writeups/lab-1-2-clarifications/index.html",
+      "/writeups/refs-and-citations/index.html"
+    ]
+  }
+]
