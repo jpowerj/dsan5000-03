@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-09-12">
+<meta name="dcterms.date" content="2023-09-13">
 
 <title>Lab 1.2 Clarifications</title>
 <style>
@@ -174,7 +174,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
+  <li><a href="#component-3" id="toc-component-3" class="nav-link active" data-scroll-target="#component-3">Component-3</a>
+  <ul class="collapse">
+  <li><a href="#making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml" id="toc-making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml" class="nav-link" data-scroll-target="#making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml">Making sure you have added both <code>href</code> and <code>text</code> data when updating <code>_quarto.yml</code></a></li>
+  <li><a href="#specifying-the-output-format-for-about.ipynb" id="toc-specifying-the-output-format-for-about.ipynb" class="nav-link" data-scroll-target="#specifying-the-output-format-for-about.ipynb">Specifying the output format for <code>about.ipynb</code></a></li>
+  <li><a href="#removing-the-about.qmd-file" id="toc-removing-the-about.qmd-file" class="nav-link" data-scroll-target="#removing-the-about.qmd-file">Removing the <code>about.qmd</code> file</a></li>
+  </ul></li>
+  <li><a href="#component-4" id="toc-component-4" class="nav-link" data-scroll-target="#component-4">Component-4</a></li>
   </ul>
 </nav>
     </div>
@@ -197,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 12, 2023</p>
+      <p class="date">September 13, 2023</p>
     </div>
   </div>
   
@@ -220,8 +226,161 @@ Links
 <p><a href="https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/labs/assignments/lab-1.2/assignment.html" target="_blank">Lab 1.2 Link</a></p>
 </div>
 </div>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="component-3" class="level2">
+<h2 class="anchored" data-anchor-id="component-3">Component-3</h2>
+<p>There is a step in Component-3 which asks you to:</p>
+<ul>
+<li>Convert <code>about.qmd</code> to <code>about.ipynb</code> with <code>quarto convert about.qmd</code>.</li>
+</ul>
+<p>After which (the last bullet in the section) it also asks you to</p>
+<ul>
+<li>modify <code>_quarto.yml</code> accordingly <code>- about.qmd</code> -&gt; <code>about.ipynb</code></li>
+</ul>
+<p>Please note the following points about these two steps:</p>
+<section id="making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml" class="level3">
+<h3 class="anchored" data-anchor-id="making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml">Making sure you have added both <code>href</code> and <code>text</code> data when updating <code>_quarto.yml</code></h3>
+<ul>
+<li>When you go to modify <code>_quarto.yml</code>, you’ll notice that the <strong>Home</strong> link is specified using two pieces of information, <code>href</code> and <code>text</code>:</li>
+</ul>
+<pre><code>      - href: index.qmd
+        text: Home</code></pre>
+<ul>
+<li>However, the <strong>About</strong> link is specified using a single bullet point, just indicating the name of the file:</li>
+</ul>
+<pre><code>      - about.qmd</code></pre>
+<ul>
+<li>So, when you go to update <code>_quarto.yml</code> to change <code>about.qmd</code> to <code>about.ipynb</code>, make sure that you include <strong>both</strong> pieces of information given for the <strong>Home</strong> link, so that your new link information should now be:</li>
+</ul>
+<pre><code>      - href: index.qmd
+        text: Home
+      - href: about.ipynb
+        text: About</code></pre>
+</section>
+<section id="specifying-the-output-format-for-about.ipynb" class="level3">
+<h3 class="anchored" data-anchor-id="specifying-the-output-format-for-about.ipynb">Specifying the output format for <code>about.ipynb</code></h3>
+<ul>
+<li>After running <code>quarto convert about.qmd</code>, you can open the generated <code>about.ipynb</code> file to view the result.</li>
+<li>However, you’ll see that the <strong>metadata block</strong> at the top of the file (the block which starts and ends with <code>---</code>) only contains the <code>title</code> attribute. That is, the top of the file will look like the following:</li>
+</ul>
+<pre><code>---
+title: "About"
+---</code></pre>
+<ul>
+<li>But, for your website to correctly render this <code>.ipynb</code> file, you’ll need to also add information to this metadata block telling Quarto that you’d like it to output <strong>HTML code</strong> when it renders <code>about.ipynb</code> for your website.</li>
+<li>To achieve this, add an additional line within the metadata block (i.e., between the starting <code>---</code> and the ending <code>---</code>), after the <code>title: "About"</code> line, specifying <code>format: html</code>. If you’ve done this correctly, your metadata block will now look like the following:</li>
+</ul>
+<pre><code>---
+title: "About"
+format: html
+---</code></pre>
+<ul>
+<li>Once you have added this additional piece of metadata, and saved your changes to the <code>about.ipynb</code> file, you will be halfway to successfully rendering this file as a page within your website. For the second half, see the next point.</li>
+</ul>
+</section>
+<section id="removing-the-about.qmd-file" class="level3">
+<h3 class="anchored" data-anchor-id="removing-the-about.qmd-file">Removing the <code>about.qmd</code> file</h3>
+<ul>
+<li>If you try to <code>quarto render</code> and/or <code>quarto preview</code> the website now, you may find that clicking the “About” link at the top of the page will show just the raw text content of the <code>about.ipynb</code> file, rather than the <strong>rendered</strong>, nicely-formatted and human-readable version. That is, when you click the “About” link, you may just see a plaintext file with the following contents:</li>
+</ul>
+<pre><code>{
+  "cells": [
+    {
+      "cell_type": "raw",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"About\"\n",
+        "format: html\n",
+        "---"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "About this site"
+      ]
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3 (ipykernel)",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 4
+}</code></pre>
+<ul>
+<li>If you encounter this issue, you can fix it by resolving the ambiguity that Quarto faces in having both <code>about.qmd</code> and <code>about.ipynb</code> files, and not knowing which one to choose as the file that should be rendered to create the final <code>about.html</code> file, the file that will be placed in the <code>_site</code> directory that <code>quarto render</code> creates.</li>
+<li>To resolve this ambiguity,
+<ul>
+<li>First, if you’re paranoid about losing the information in <code>about.qmd</code>, you can back this file up to another folder on your computer.</li>
+<li>Then (or, you can start here if you’re not worried about losing <code>about.qmd</code>), delete the original <code>about.qmd</code> file.</li>
+</ul></li>
+<li>Deleting the original <code>about.qmd</code> file will thus ensure that Quarto has a single <code>about</code> file (in this case, <code>about.ipynb</code>) that it knows is the file you want Quarto to render and show when a user clicks the “About” link.</li>
+</ul>
+</section>
+</section>
+<section id="component-4" class="level2">
+<h2 class="anchored" data-anchor-id="component-4">Component-4</h2>
+<p>In one of the bullets in the Component-4 section of the lab, it mentions the following:</p>
+<ul>
+<li><strong>Note</strong>: Use of <code>ipsum lorem</code> place-holder text is allowed</li>
+</ul>
+<p>What this means is just: If you would like “filler text” for your <code>index.qmd</code> page, to show what it will look like once it’s filled with content (but without having to write hundreds of words of content yourself), you can use a <a href="https://loremipsum.io/" target="_blank">“Lorem Ipsum text generator”</a> to auto-generate some number of paragraphs (filled with random Latin words), and place this auto-generated text in your <code>index.qmd</code> file.</p>
+<p>To see why you might want to do this, consider the difference between the following structure with no filler text:</p>
+<div class="callout callout-style-simple callout-note callout-titled" title="Section Headers *Without* Filler Content">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Section Headers <em>Without</em> Filler Content
+</div>
+</div>
+<section id="my-heading" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="my-heading">My Heading</h3>
+<section id="my-subheading" class="level4">
+<h4 class="anchored" data-anchor-id="my-subheading">My Subheading</h4>
+</section>
+<section id="another-subheading" class="level4">
+<h4 class="anchored" data-anchor-id="another-subheading">Another Subheading</h4>
+</section>
+<section id="third-subheading" class="level4">
+<h4 class="anchored" data-anchor-id="third-subheading">Third Subheading</h4>
+</section>
+</section>
+</div>
+<p>And the same structure but “filled out” with paragraphs of randomly-generated text:</p>
+<div class="callout callout-style-simple callout-note callout-titled" title="Section Headers *With* Filler Content">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Section Headers <em>With</em> Filler Content
+</div>
+</div>
+<section id="my-heading-1" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="my-heading-1">My Heading</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed cras ornare arcu dui vivamus arcu felis. Dis parturient montes nascetur ridiculus mus. Tincidunt ornare massa eget egestas purus viverra. Porttitor massa id neque aliquam vestibulum morbi. Fringilla phasellus faucibus scelerisque eleifend. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Urna id volutpat lacus laoreet non. Sed pulvinar proin gravida hendrerit lectus a. Sed odio morbi quis commodo odio aenean sed adipiscing. Bibendum at varius vel pharetra vel turpis nunc. Nec dui nunc mattis enim ut tellus elementum sagittis. Nisl rhoncus mattis rhoncus urna neque viverra. Elit at imperdiet dui accumsan.</p>
+<section id="my-subheading-1" class="level4">
+<h4 class="anchored" data-anchor-id="my-subheading-1">My Subheading</h4>
+<p>Porta non pulvinar neque laoreet suspendisse interdum consectetur libero id. Laoreet sit amet cursus sit amet dictum sit amet justo. Vitae semper quis lectus nulla at volutpat. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Tellus elementum sagittis vitae et leo duis ut. Neque vitae tempus quam pellentesque. Cursus eget nunc scelerisque viverra mauris. Morbi leo urna molestie at. Convallis posuere morbi leo urna molestie at elementum. Non consectetur a erat nam. Sagittis nisl rhoncus mattis rhoncus urna neque viverra. Lorem sed risus ultricies tristique.</p>
+</section>
+<section id="another-subheading-1" class="level4">
+<h4 class="anchored" data-anchor-id="another-subheading-1">Another Subheading</h4>
+<p>Turpis massa sed elementum tempus egestas. Et netus et malesuada fames ac turpis. Diam maecenas ultricies mi eget mauris pharetra et ultrices neque. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Vulputate dignissim suspendisse in est. Ultricies mi quis hendrerit dolor magna eget est. Senectus et netus et malesuada fames. Aliquet porttitor lacus luctus accumsan tortor posuere ac. Et ligula ullamcorper malesuada proin libero nunc consequat. Nibh mauris cursus mattis molestie a iaculis. Sit amet commodo nulla facilisi nullam. Mollis nunc sed id semper risus in hendrerit. Sit amet massa vitae tortor condimentum lacinia. Ante in nibh mauris cursus. Aliquam purus sit amet luctus. Tincidunt arcu non sodales neque.</p>
+</section>
+<section id="third-subheading-1" class="level4">
+<h4 class="anchored" data-anchor-id="third-subheading-1">Third Subheading</h4>
+<p>Lorem ipsum dolor sit amet consectetur adipiscing. Tortor pretium viverra suspendisse potenti. Felis eget nunc lobortis mattis aliquam faucibus. Morbi tincidunt ornare massa eget egestas purus viverra. Et netus et malesuada fames ac turpis. Nunc id cursus metus aliquam eleifend. Imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. Dignissim diam quis enim lobortis scelerisque. Vel pretium lectus quam id leo in vitae turpis. Venenatis cras sed felis eget velit aliquet. Eu feugiat pretium nibh ipsum. Eu tincidunt tortor aliquam nulla facilisi.</p>
+</section>
+</section>
+</div>
+<p>If you think this second version looks nicer than the first, and shows more clearly how the headers <strong>separate out</strong> different pieces of content, you can use this “lorem ipsum” text as filler (until you replace it with your own original writing!).</p>
 
 
 </section>

@@ -1,0 +1,11 @@
+---
+title: "Using Quarto's Reference Manager with Zotero"
+date: last-modified
+categories:
+  - "Extra Writeups"
+format:
+  html:
+    cache: false
+---
+
+* Soon to come! Building upon the more basic approach described in the [Using Quarto's Reference Manager with Google Scholar](../refs-and-citations/index.qmd){target="_blank"} writeup.

@@ -2,8 +2,9 @@
 title: "Lab 1.2 Clarifications"
 format: html
 date: last-modified
+date-format: "dddd MMM D, YYYY, HH:mm:ss"
 categories:
-  - "Extra Writeups"
+  - "Clarifications"
 ---
 
 ::: {.callout-tip title="Links"}
@@ -12,7 +13,7 @@ categories:
 
 :::
 
-## Component-3
+## Component-3: Multiple Versions of the About Page
 
 There is a step in Component-3 which asks you to:
 
@@ -114,9 +115,9 @@ format: html
   * Then (or, you can start here if you're not worried about losing `about.qmd`), delete the original `about.qmd` file.
 * Deleting the original `about.qmd` file will thus ensure that Quarto has a single `about` file (in this case, `about.ipynb`) that it knows is the file you want Quarto to render and show when a user clicks the "About" link.
 
-## Component-4
+## Component-4 and Component-5: Lorem Ipsum Text
 
-In one of the bullets in the Component-4 section of the lab, it mentions the following:
+In one of the bullets in both the Component-4 section and Component-5 section of the lab, it mentions the following:
 
 * **Note**: Use of `ipsum lorem` place-holder text is allowed
 

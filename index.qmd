@@ -1,19 +1,20 @@
 ---
-title: "DSAN 5000, Section 03 (Wednesdays)"
+title: "Extra Writeups"
 listing:
-  sort-ui: false
-  filter-ui: false
+  #sort-ui: false
+  #filter-ui: false
   type: table
+  categories: true
   include:
-    categories: "{Class Sessions}"
-  fields: [title,date]
-  sort: "lecnum asc"
+    categories: "{Extra Writeups,Clarifications}"
+  fields: [title,date,categories]
+  field-display-names: 
+    title: "Title"
+    date: "Last Updated"
+    categories: "Category"
+  sort: "date desc"
   table-hover: true
-  date-format: full
+  #date-format: full
+  date-format: "dddd MMM D, YYYY, HH:mm:ss"
 ---
 
-This is a "hub" collecting relevant links for each week, for students in Prof. Jeff's **Wednesday section (Section 03)** of *DSAN 5000: Data Science and Analytics*, Fall 2023 at Georgetown University.
-
-It is *not* a replacement for the **<a href="https://jfh.georgetown.domains/dsan5000/" target="_blank">Main Course Page</a>** or the **<a href="https://georgetown.instructure.com/courses/173310" target="_blank">Canvas Page</a>**, which are shared across all sections!
-
-Use the menu on the left, or the table below, to view the resources for a specific week.
