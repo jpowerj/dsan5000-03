@@ -23,6 +23,8 @@ website:
       - href: w04/index.qmd
         text: "Week 4: Sep 13"
       - "---"
+      - href: recordings/index.qmd
+        text: "Recordings"
       - href: writeups/index.qmd
         text: "Extra Writeups"
       - "---"
