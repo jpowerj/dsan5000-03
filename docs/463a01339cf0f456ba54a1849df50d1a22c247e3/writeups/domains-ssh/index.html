@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-09-13">
+<meta name="dcterms.date" content="2023-09-14">
 
 <title>Troubleshooting SSH/SCP/rsync on Georgetown Domains</title>
 <style>
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -176,7 +210,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#step-1-creating-a-private-key" id="toc-step-1-creating-a-private-key" class="nav-link active" data-scroll-target="#step-1-creating-a-private-key">Step 1: Creating a <em>Private Key</em></a>
+  <ul class="collapse">
+  <li><a href="#step-1.1-opening-the-ssh-access-tool-in-georgetown-domains" id="toc-step-1.1-opening-the-ssh-access-tool-in-georgetown-domains" class="nav-link" data-scroll-target="#step-1.1-opening-the-ssh-access-tool-in-georgetown-domains">Step 1.1: Opening the “SSH Access” Tool in Georgetown Domains</a></li>
+  <li><a href="#step-1.2-generating-the-key" id="toc-step-1.2-generating-the-key" class="nav-link" data-scroll-target="#step-1.2-generating-the-key">Step 1.2: Generating the Key</a></li>
+  <li><a href="#step-1.3-authorizing-this-key-to-acess-your-server" id="toc-step-1.3-authorizing-this-key-to-acess-your-server" class="nav-link" data-scroll-target="#step-1.3-authorizing-this-key-to-acess-your-server">Step 1.3: Authorizing This Key to Acess Your Server</a></li>
+  <li><a href="#step-1.4-downloading-the-private-key" id="toc-step-1.4-downloading-the-private-key" class="nav-link" data-scroll-target="#step-1.4-downloading-the-private-key">Step 1.4: Downloading the Private Key</a></li>
+  </ul></li>
+  <li><a href="#step-2-using-the-private-key-to-access-your-georgetown-domains-server" id="toc-step-2-using-the-private-key-to-access-your-georgetown-domains-server" class="nav-link" data-scroll-target="#step-2-using-the-private-key-to-access-your-georgetown-domains-server">Step 2: Using the <em>Private Key</em> to Access Your Georgetown Domains Server</a>
+  <ul class="collapse">
+  <li><a href="#step-1.5-finding-your-public_html-path" id="toc-step-1.5-finding-your-public_html-path" class="nav-link" data-scroll-target="#step-1.5-finding-your-public_html-path">Step 1.5: Finding Your <code>public_html</code> Path</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -197,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 13, 2023</p>
+      <p class="date">September 14, 2023</p>
     </div>
   </div>
   
@@ -207,8 +257,140 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>This tutorial assumes that you have already created a <strong>Georgetown Domains</strong> account. If you haven’t already done so, or you’re having trouble setting one up, please feel free to <a href="mailto:jj1088@georgetown.edu" target="_blank">email me</a>.</p>
+<section id="step-1-creating-a-private-key" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-creating-a-private-key">Step 1: Creating a <em>Private Key</em></h2>
+<p>To remotely access your Georgetown Domains server from your local computer (outside of the method we used before, of accessing the terminal through a web interface), you will first need to <strong>create an SSH keypair</strong>, which you can think of in two steps:</p>
+<ol type="1">
+<li>Georgetown Domains generates a “keyhole” on your Domains server, a <strong>Public Key</strong>, which allows your Domains server to be accessed remotely by someone who has the matching <strong>private key</strong>. Hence, it also creates a</li>
+<li><strong>Private Key</strong>: a file (in this case, it will be called <code>id_rsa</code>, with no file extension) that you save onto your computer, and you <strong>remember where you saved it</strong>, that will allow you to access your Georgetown Domains server remotely. There is a third piece of information here, which is the <strong>passphrase</strong> that will <strong>protect</strong> your private key from unauthorized usage (this is required by Georgetown, but is optional in general), but we’ll worry about that in a moment.</li>
+</ol>
+<p>Let’s generate this keypair step-by-step:</p>
+<section id="step-1.1-opening-the-ssh-access-tool-in-georgetown-domains" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.1-opening-the-ssh-access-tool-in-georgetown-domains">Step 1.1: Opening the “SSH Access” Tool in Georgetown Domains</h3>
+<p>Open your browser and navigate to the <strong>Georgetown Domains dashboard</strong>. This is the interface that opens if you navigate to <a href="https://georgetown.domains/dashboard" target="_blank">https://georgetown.domains/dashboard</a></p>
+<p>If you scroll down to the category of tools with the heading “Security”, you will see an icon and a link for “SSH Access”:</p>
+<p><img src="images/ssh_access.jpeg" class="img-fluid"></p>
+<p>Click this link to open the SSH key generation page, and then once this page opens, click the “Manage SSH Keys” button:</p>
+<p><img src="images/manage_keys.jpeg" class="img-fluid"></p>
+</section>
+<section id="step-1.2-generating-the-key" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.2-generating-the-key">Step 1.2: Generating the Key</h3>
+<p>After clicking “Manage SSH Keys” and waiting for the next page to load, don’t worry about any of the other options, just click the “+ Generate a New Key” button near the top:</p>
+<p><img src="images/generate_new_key_button.jpeg" class="img-fluid"></p>
+<p>Within the key-generation form that appears, you don’t need to enter or modify anything <strong>except for the Key Password and Reenter Password fields</strong>. The way these two fields are phrased is a bit confusing, since you already have a <strong>password</strong> to access Georgetown services in general (as in, the password that you use to log into Canvas, for example, that requires Two-Factor Authentication): <strong>do not</strong> enter that password here. This is a <strong>new</strong> password, really called a <strong>passphrase</strong>, and all it does it <strong>protect your SSH private key from unauthorized usage</strong>: if someone manages to steal your <code>id_rsa</code> file, they still won’t be able to access your Georgetown Domains server without knowing this <strong>passphrase</strong>.</p>
+<p><img src="images/key_generation_form.jpeg" class="img-fluid"></p>
+<p>So, choose a passphrase that is easy to remember and passes Georgetown’s security requirements (it won’t let you submit the form until the passphrase meets those requirements – you can use the “Password Generator” button to auto-generate one if that’s easier), and submit the form by clicking the “Generate Key” button at the bottom.</p>
+<p>If all went well, you should see a success screen that says “Key Generation Complete!” at the top:</p>
+<p><img src="images/successful_generation.jpeg" class="img-fluid"></p>
+<p>This screen is also confusing, because it makes it seem like you need to care about the console output that it shows you underneath “Key Generation Complete!”, but in reality you don’t need to worry about it (I excluded it here just in case).</p>
+</section>
+<section id="step-1.3-authorizing-this-key-to-acess-your-server" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.3-authorizing-this-key-to-acess-your-server">Step 1.3: Authorizing This Key to Acess Your Server</h3>
+<p>From the “Key Generation Complete!” screen, click the “Go Back” link at the bottom of the page to return to the SSH Key Generation panel. You should see the window you saw before, with the “+ Generate a New Key” button at the top, but now below this button you will also see your newly-created pair of keys: the <strong>public key</strong> just created will now be listed in the “Public Keys” list, and then underneath this the <strong>private key</strong> just created will be listed in the “Private Keys” list.</p>
+<p>The first, basic step we need to do is verify with Georgetown Domains that the public key is a valid “keyhole” for remote computers to use to access your Domains server (you’ll notice that it is not authorized by default, so you will see the status “not authorized” within the “Authorization Status” column of the Public Keys list). To activate it, scroll to the Public Keys list and click the “Manage” link (with a wrench icon to the left of it):</p>
+<p><img src="images/public_keys_list.jpeg" class="img-fluid"></p>
+<p>This should bring up a screen where you can straightforwardly click the “Authorize” button to authorize this public key:</p>
+<p><img src="images/authorize_public_key.jpeg" class="img-fluid"></p>
+<p>And, once you click this, you should see a success message like the following:</p>
+<p><img src="images/public_key_authorized.jpeg" class="img-fluid"></p>
+<p>Click “Go Back” once again to return to the SSH Key Management page.</p>
+</section>
+<section id="step-1.4-downloading-the-private-key" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.4-downloading-the-private-key">Step 1.4: Downloading the Private Key</h3>
+<p>That is the last time we’ll deal with the public key, the “keyhole” to your server, now that it has been authorized for use. Next, scroll further down to the Private Keys listing, where you should see your <code>id_rsa</code> private key that we generated in Step 1.2:</p>
+<p><img src="images/private_keys_listing.jpeg" class="img-fluid"></p>
+<p>In this case, we <strong>do</strong> want to download this key (as a file) to our local computer, since the <code>ssh</code> (and <code>scp</code> and <code>rsync</code>) command will need to use this key to <strong>acess</strong> your server. So, click the “View/Download” button (with a disk icon to the left of it). This will bring you to a scary-looking page, that contains your full private key in a big textbox. You don’t need to worry about this, or about the “Convert to PPK” section at the bottom of the page. Just scroll to the button which allows you to <strong>download</strong> the key file:</p>
+<p><img src="images/download_key_button.jpeg" class="img-fluid"></p>
+<p><strong>IMPORTANT</strong>: Make sure that, once this file has downloaded, you <strong>move it</strong> to a location on your local computer that is <strong>secure</strong> but also <strong>easy to locate</strong>, since you will need to know the <strong>absolute path</strong> to this file, in order to <strong>tell the <code>ssh</code> command</strong> where to find it. For example, if I copy the key file to my home directory on a Mac, its path might be:</p>
+<pre><code>/Users/jpj/id_rsa</code></pre>
+<p>If you’re on Windows, and you move it directly onto your <code>C:</code> drive for example, then the path will instead be</p>
+<pre><code>C:\id_rsa</code></pre>
+<p>So, just make sure you <strong>know this absolute path</strong> to the <code>id_rsa</code> file, remembering that it <strong>has no file extension</strong>: it’s not <code>id_rsa.txt</code>, or <code>id_rsa.pub</code> (that could be what the public key is called), but just <code>id_rsa</code> without extension.</p>
+</section>
+</section>
+<section id="step-2-using-the-private-key-to-access-your-georgetown-domains-server" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-using-the-private-key-to-access-your-georgetown-domains-server">Step 2: Using the <em>Private Key</em> to Access Your Georgetown Domains Server</h2>
+<p>Now that you have the <code>id_rsa</code> file downloaded, in a <strong>location that you can remember the path to</strong> (or write down the path to), open up your <strong>terminal</strong> if you’re on Mac or Git Bash if you’re on Windows. We’ll start by using the <code>ssh</code> command, with our private key (<code>id_rsa</code>) file, to connect to the server.</p>
+<p>This order is actually somewhat important: we want to start with <strong><code>ssh</code></strong>, not <code>scp</code> or <code>rsync</code>, since the syntax for the <code>scp</code> and <code>rsync</code> commands <strong>build upon</strong> the syntax for the <code>ssh</code> command. So, I recommend starting with <code>ssh</code>, and working your way towards <code>scp</code> and/or <code>rsync</code>.</p>
+<p>Within your terminal, we will now “craft” a correct <code>ssh</code> command (you may actually want to have a text editor open, <em>next to</em> your terminal, where you can write out commands to make sure they’re correct before copying-and-pasting them into the terminal). The first part is the name of the command, <code>ssh</code>. So, right now, you should just have the following written in your terminal (don’t press Enter or anything yet, we’re going to press Enter once we finish writing out the command!)</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now, we need to give to the <code>ssh</code> command the following information: (a) that we want to <strong>use a private key to connect</strong>, and (b) the <strong>location</strong> of our private key, in the form of a <strong>path</strong> on your local computer’s drive where that key exists.</p>
+<p>To give the information (a), you add the <code>-i</code> flag right after <code>ssh</code>, separated by a space. This tells <code>ssh</code> that you are about to provide a path to a private key file (again, don’t press Enter yet! I will indicate when the command is finished and ready to execute in the terminal):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-i</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Next, we need to provide information (b), the actual <strong>path</strong> to the private key file, which you should include in <strong>double quotes</strong> after the <code>-i</code> character (separated by a space). So, for example, if I had moved my private key to <code>/Users/jpj/id_rsa</code>, then the command at this point would look like:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-i</span> <span class="st">"/Users/jpj/id_rsa"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If I was on Windows, and I had saved it directly in the root of my <code>C:</code> directory, then the command would instead look like:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-i</span> <span class="st">"C:\id_rsa"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now, there are two final pieces of information that we need to provide to the <code>ssh</code> command: (a) our <strong>username</strong> on our Georgetown Domains server, and (b) the <strong>domain</strong> that the Georgetown Domains system has allocated for us. To find both pieces of information, you can navigate back to the Georgetown Domains Dashboard main page: <a href="https://georgetown.domains/dashboard" target="_blank">https://georgetown.domains/dashboard</a>, and look for this info box near the top of the page, on the right side of the page:</p>
+<p><img src="images/gtown_domains_info.jpeg" class="img-fluid"></p>
+<p>The only information that we need is in the <strong>first two rows</strong> of this info box: in my case, this shows me that:</p>
+<ul>
+<li>My <strong>username</strong> is <code>jpjgeorg</code>, and</li>
+<li>My <strong>domain</strong> is <code>jpj.georgetown.domains</code></li>
+</ul>
+<p>These are exactly the two pieces of information we were looking for! Moving back to the terminal, we can now complete the <code>ssh</code> command by entering this information in the form <code>username@domain</code>, separated from the end of the private key file path by a space. Using my information, the command is now</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-i</span> <span class="st">"/path/to/private/key/file"</span> jpjgeorg@jpj.georgetown.domains</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Keep in mind that this <code>username@domain</code> portion may look strange to you</strong>, if your username and your domain are similar/identical. For example, it may have assigned you the username <code>dsanstudent</code>, and the domain <code>dsanstudent.georgetown.domains</code>: in this case, you need to make sure to include <strong>both pieces of information</strong>: <code>dsanstudent@dsanstudent.georgetown.domains</code>. Long story short, the Georgetown Domains system creates a <strong>custom server</strong> just for you, and makes you the <strong>only user</strong> on this custom server, so that information gets repeated in this address: the <code>dsanstudent.georgetown.domains</code> server is created, with one user called <code>dsanstudent</code>. Now that we understand this, we can <strong>run our command</strong>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-i</span> <span class="st">"/path/to/private/key/file"</span> username@domain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you don’t see a scary all-caps error that says <code>"REJECTED: INCORRECT PERMISSIONS SET FOR PRIVATE KEY FILE</code>“, you can jump to the next step. However, some students are getting an error that says essentially <code>"REJECTED: INCORRECT PERMISSIONS SET FOR PRIVATE KEY FILE</code>”. If you see this all-caps error, you can fix it by doing the following:</p>
+<p>::: {.callout-note title=“Fixing the <code>"INCORRECT PRIVATE KEY PERMISSIONS</code> Error”}</p>
+<p>If you see an error that looks like <code>"INCORRECT PRIVATE KEY PERMISSIONS"</code>, all in caps, this means that when you downloaded you private key from the browser (Chrome, Firefox, etc.), it set the permissions on this file to be the “standard” permissions for any downloaded file, which is <strong>not</strong> what we want for the private key file, since this is an extremely important file that we want to keep secured. So, we’ll have the <strong>change the permissions</strong> on this file to be as secure as possible while still allowing us to use it in the terminal.</p>
+<p>So, open up a <strong>new</strong> terminal window. Using the <code>cd</code> command (along with <code>pwd</code> to see what your current working directory is), navigate to the location where your <code>id_rsa</code> file is stored. Once you have arrived at that path (you can tell by running <code>ls</code> and seeing if <code>id_rsa</code> is one of the files listed in the directory), you can use the following command to change the permissions on the <code>id_rsa</code> file to the required settings for ssh access:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 600 id_rsa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tells your computer to <strong>change the permissions</strong> of the <code>id_rsa</code> file to the permissions code <code>600</code>, which corresponds to the case where <strong>you</strong> (the owner) have <strong>read and write</strong> permissions, but <strong>anyone else</strong> has <strong>no</strong> permissions (no read, no write, and no execute) on this file. One you’ve done this, to make sure it worked, you can check the permissions on the <code>id_rsa</code> file specifically by running</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lah</span> id_rsa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This should print out a detailed listing of information on the <code>id_rsa</code> file, and should look like the following if the permissions were set correctly:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-------@</span> 1 jpj  staff   1.7K Jun  9 23:40 id_rsa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(Your computer should show your own username rather than <code>jpj</code>, and some usergroup besides <code>staff</code>, but the permissions string should look similar to the string all the way on the left of the above output: the <code>-rw-------@</code> portion)</p>
+<p>:::</p>
+<p>If you did <strong>not</strong> encounter this <code>"INCORRECT PERMISSION"</code> error, or if you encountered it but fixed it by changing the permissions on the <code>id_rsa</code> file and re-running the previous command (the <code>ssh</code> command), then the terminal should now be asking you for a <strong>passphrase</strong> for your <strong>SSH private key</strong>. In my case, this looks like:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">jpj@GSAS-AL-06LVHQQ</span> domains % ssh <span class="at">-i</span> <span class="st">"id_rsa"</span> jpjgeorg@jpj.georgetown.domains</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> passphrase for key <span class="st">'id_rsa'</span>: </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And then (on Mac) it shows a tiny key icon after the <code>:</code> character (on Windows it should just show an empty black or white box). This is asking you to enter the <strong>SSH key passphrase</strong> that you created in step 1.2 above, <strong>not</strong> your general Georgetown account password that you use to access other Georgetown services like Canvas! So, start typing (or paste) that <strong>SSH key passphrase</strong> into the terminal.</p>
+<p>Some students have gotten worried at this point, because they notice that the <strong>cursor does not move</strong> as they type their passwords: <strong>this is the expected behavior</strong>, even though it feels weird to type and not see any feedback on the screen! It is a feature on Linux, which ensures that <strong>even if people are watching your screen, they cannot see how long your password is</strong> (it turns out that cracking passwords becomes much much easier, in many cases, if you know in advance <strong>how long</strong> the person’s password is).</p>
+<p>So, you won’t see any feedback on the screen, but once you’ve typed or pasted your <strong>SSH secret key passphrase</strong>, press enter.</p>
+<p>If the <strong>location of the private key file</strong> was successfully provided to the <code>ssh</code> command via the string after the <code>-i</code> flag, and if the <strong>private key passphrase</strong> was entered correctly, then it should successfully connect to your Georgetown Domains server. If you have indeed successfully connected, your <strong>terminal prompt</strong> (the portion of the terminal where you type new commands) will suddenly <strong>change</strong>. Whereas before it may have looked like</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">jpj@GSAS-AL-06LVHQQ</span> ~ %</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now it should look like</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[jpjgeorg@gtown3</span> ~]$ </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you’ve never logged in before, it may show some additional info above this prompt, but if you have logged in before, it will also show the following above the prompt:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Last</span> login: Sun Sep 10 21:47:30 2023 from 216.15.21.131</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[jpjgeorg@gtown3</span> ~]$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You have now successfully connected to your Georgetown Domains server! There is one remaining step, which will help us to move from just <strong>connecting</strong> to the server via <code>ssh</code> to <strong>transferring files</strong> to/from the server via <code>scp</code> or <code>rsync</code>.</p>
+<section id="step-1.5-finding-your-public_html-path" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.5-finding-your-public_html-path">Step 1.5: Finding Your <code>public_html</code> Path</h3>
+<p>Once you have successfully connected to the server, you should also browse the directory structure to see how it works. In particular, as a first step, try just running</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This should just show the full, absolute path to your <strong>home directory</strong>. In my case, the output was</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/jpjgeorg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Next, run</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It should show a bunch of files and folders (probably not the same as the following output), but you should at least see a <code>public_html</code> subfolder:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">access-logs</span>    dsan-conference-posters  mail           public_ftp   tmp     www</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">composer.json</span>  etc                      _metadata.yml  public_html  var</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ex">composer.lock</span>  logs                     perl5          ssl          vendor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This <code>public_html</code> subfolder, within your <strong>home</strong> folder, is where your Georgetown Domains web server will <strong>look for</strong> and <strong>serve files</strong> when people type your <strong>domain</strong> (like <code>dsanstudent.georgetown.domains</code>) into their browser’s address bar.</p>
+<p>So, let’s move into this <code>public_html</code> directory, by entering and executing</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> public_html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If we now check our working directory, by entering and executing</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should now see something that looks like the following:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/jpjgeorg/public_html</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should <strong>take a screenshot</strong> of this path, or <strong>write it down</strong>, or remember it some other way. Because, this is the <strong>remote path</strong> (the path on the remote server) that you’ll want to copy your <strong>local files</strong> to, when we ask you e.g.&nbsp;to copy your <code>_site</code> directory to your Georgetown Domains server.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
