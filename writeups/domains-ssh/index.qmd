@@ -102,6 +102,8 @@ ssh
 
 Now, we need to give to the `ssh` command the following information: (a) that we want to **use a private key to connect**, and (b) the **location** of our private key, in the form of a **path** on your local computer's drive where that key exists.
 
+### Step 2.1: Providing `ssh` the Absolute Path to the Private Key File (`id_rsa`)
+
 To give the information (a), you add the `-i` flag right after `ssh`, separated by a space. This tells `ssh` that you are about to provide a path to a private key file (again, don't press Enter yet! I will indicate when the command is finished and ready to execute in the terminal):
 
 ```bash
@@ -120,6 +122,8 @@ If I was on Windows, and I had saved it directly in the root of my `C:` director
 ssh -i "C:\id_rsa"
 ```
 
+### Step 2.2: Providing Your Georgetown Domains Username and Domain
+
 Now, there are two final pieces of information that we need to provide to the `ssh` command: (a) our **username** on our Georgetown Domains server, and (b) the **domain** that the Georgetown Domains system has allocated for us. To find both pieces of information, you can navigate back to the Georgetown Domains Dashboard main page: [https://georgetown.domains/dashboard](https://georgetown.domains/dashboard){target="_blank"}, and look for this info box near the top of the page, on the right side of the page:
 
 ![](images/gtown_domains_info.jpeg)
@@ -135,7 +139,11 @@ These are exactly the two pieces of information we were looking for! Moving back
 ssh -i "/path/to/private/key/file" jpjgeorg@jpj.georgetown.domains
 ```
 
-**Keep in mind that this `username@domain` portion may look strange to you**, if your username and your domain are similar/identical. For example, it may have assigned you the username `dsanstudent`, and the domain `dsanstudent.georgetown.domains`: in this case, you need to make sure to include **both pieces of information**: `dsanstudent@dsanstudent.georgetown.domains`. Long story short, the Georgetown Domains system creates a **custom server** just for you, and makes you the **only user** on this custom server, so that information gets repeated in this address: the `dsanstudent.georgetown.domains` server is created, with one user called `dsanstudent`. Now that we understand this, we can **run our command**:
+**Keep in mind that this `username@domain` portion may look strange to you**, if your username and your domain are similar/identical. For example, it may have assigned you the username `dsanstudent`, and the domain `dsanstudent.georgetown.domains`: in this case, you need to make sure to include **both pieces of information**: `dsanstudent@dsanstudent.georgetown.domains`. Long story short, the Georgetown Domains system creates a **custom server** just for you, and makes you the **only user** on this custom server, so that information gets repeated in this address: the `dsanstudent.georgetown.domains` server is created, with one user called `dsanstudent`.
+
+### Step 2.3: Running the SSH Command
+
+Now that we understand this, we can **run our command**:
 
 ```bash
 ssh -i "/path/to/private/key/file" username@domain
@@ -171,6 +179,8 @@ This should print out a detailed listing of information on the `id_rsa` file, an
 
 :::
 
+### Step 2.4: Entering the SSH Key Passphrase
+
 If you did **not** encounter this `"INCORRECT PERMISSION"` error, or if you encountered it but fixed it by changing the permissions on the `id_rsa` file and re-running the previous command (the `ssh` command), then the terminal should now be asking you for a **passphrase** for your **SSH private key**. In my case, this looks like:
 
 ```bash
@@ -185,6 +195,8 @@ And then (on Mac) it shows a tiny key icon after the `:` character (on Windows i
 Some students have gotten worried at this point, because they notice that the **cursor does not move** as they type their passwords: **this is the expected behavior**, even though it feels weird to type and not see any feedback on the screen! It is a feature on Linux, which ensures that **even if people are watching your screen, they cannot see how long your password is** (it turns out that cracking passwords becomes much much easier, in many cases, if you know in advance **how long** the person's password is).
 
 So, you won't see any feedback on the screen, but once you've typed or pasted your **SSH secret key passphrase**, press enter.
+
+### Step 2.5: Checking That The Connection Was Successful
 
 If the **location of the private key file** was successfully provided to the `ssh` command via the string after the `-i` flag, and if the **private key passphrase** was entered correctly, then it should successfully connect to your Georgetown Domains server. If you have indeed successfully connected, your **terminal prompt** (the portion of the terminal where you type new commands) will suddenly **change**. Whereas before it may have looked like
 
@@ -213,7 +225,7 @@ Last login: Sun Sep 10 21:47:30 2023 from 216.15.21.131
 
 You have now successfully connected to your Georgetown Domains server! There is one remaining step, which will help us to move from just **connecting** to the server via `ssh` to **transferring files** to/from the server via `scp` or `rsync`.
 
-### Step 1.5: Finding Your `public_html` Path
+### Step 2.6: Finding Your `public_html` Path
 
 Once you have successfully connected to the server, you should also browse the directory structure to see how it works. In particular, as a first step, try just running
 
@@ -271,4 +283,65 @@ You should now see something that looks like the following:
 ```
 
 You should **take a screenshot** of this path, or **write it down**, or remember it some other way. Because, this is the **remote path** (the path on the remote server) that you'll want to copy your **local files** to, when we ask you e.g. to copy your `_site` directory to your Georgetown Domains server.
+
+## Step 3: Moving from `ssh` to `scp`
+
+Now that you know how to provide the necessary information and connect to your Georgetown Domains server using the `ssh` command, we'll move to the `scp` command. Basically, while the `ssh` command lets you connect to and **"look around"** inside your server, the `scp` command allows you to **transfer files** to and from your server. The information you need to provide, and the syntax, are very similar, so we're done with the hardest parts!
+
+### Step 3.1: Providing the Absolute Path to Your Private Key File (`id_rsa`)
+
+Just like the `ssh` command, you can provide a `-i` flag (short for "identity file"), followed by the **path** to your **ssh private key file**, as information for the `scp` command, as follows (again, don't press Enter until we're finished writing out the full command, in a later step):
+
+```bash
+scp -i "/path/to/your/file"
+```
+
+In my case, since my file is located within the `/Users/jpj/` directory on my hard drive, I start the `scp` command with
+
+```bash
+scp -i "/Users/jpj/id_rsa"
+```
+
+### Step 3.2: Providing the Path (Absolute or Relative) to the Local File You'd Like to Copy
+
+Next, I need to give `scp` the **path** to the **file** that I'd like to copy to my Georgetown Domains server. Note that here we're starting with **file copying** rather than **folder copying**, which I **strongly recommend** so that you can check whether the syntax of your `scp` command is correct before trying to copy a ton of files. Specifically, I recommend just making a **test file** called `hello.txt`, and seeing if you can successfully use `scp` to copy this file from your local drive to your Georgetown Domains server. To create a fake file like this very quickly, you can run the following commands in your terminal:
+
+```bash
+touch hello.txt
+echo "Hello World" >> hello.txt
+```
+
+Wherever you run these two commands, there will now be a `hello.txt` file which contains the text `Hello World`. Now, let's try to copy this file to our Georgetown Domains server---specifically, the **`public_html` directory within our Georgetown Domains server**. To get there, we need to finish up the remaining parts of our `scp` command. Add in the **path** to the file on your **local** drive that you want to copy to the **remote server** as the next argument to `scp`, like:
+
+```bash
+scp -i "/path/to/your/key/file" "hello.txt"
+```
+
+In this case, since I created `hello.txt` in the same directory that I am now executing the `scp` command from, I don't need to provide an absolute path (like `/Users/jpj/hello.txt`). In general, though, if you're trying to copy a file from somewhere in your computer that is **not** your current working directory, you need to include an absolute or relative path to that file here.
+
+### Step 3.3: Providing the `username@domain` String
+
+Next, we include the `username@domain` information in the exact same way we included it in the `ssh` command, making our command look like this:
+
+```bash
+scp -i "/path/to/your/key/file" "hello.txt" jpjgeorg@jpj.georgetown.domains
+```
+
+### Step 3.4: Providing the *Remote Path* Where We'd Like Our File(s) To Be Copied To
+
+There is one last piece of information we need to provide: the **path on the remote server** where we would like to copy `hello.txt` to! In this case, we wrote it down in a previous step: it was `/home/jpjgeorg/public_html`. So, we enter this as the last piece of information in our `scp` command, but in a bit of a strange-looking way: we **add a colon (`:`)** to the end of the `username@domain` string, and then provide the desired **remote path** after this colon character. So, in this case, to transfer to the `/home/jpjgeorg/public_html` directory, we finish writing out the command as follows:
+
+```bash
+scp -i "/path/to/your/key/file" "hello.txt" jpjgeorg@jpj.georgetown.domains:/home/jpjgeorg/public_html
+```
+
+### Step 3.5: Executing the Command
+
+Finally, we can **press Enter** and execute the command! If it worked successfully, you may see a summary of the information: that it has transferred a single file, with size of only a few bytes, called `hello.txt`. Now let's check to make sure the copy actually worked
+
+### Step 3.6: Making Sure The Copy Was Successful
+
+There are two ways you could check that this copy worked. The first, and safer way, would be to `ssh` into our remote server again, use `cd` to navigate to the `public_html` directory, and then execute `ls` and check that `hello.txt` is one of the listed files.
+
+However, since `public_html` is a special directory, that is **publicly-available**, we could also check that `hello.txt` transferred correctly by opening our **browser** and typing our domain followed by `/hello.txt`. So, in my case for example, you or I or anyone else could open [https://jpj.georgetown.domains/hello.txt](https://jpj.georgetown.domains/hello.txt){target="_blank"}, and check to see that it indeed shows the content `Hello world!`. If your domain also shows this, when you go to (for example) `dsanstudent.georgetown.domains`, then you know that the transfer was a success!
 
