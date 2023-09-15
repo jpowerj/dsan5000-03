@@ -149,11 +149,24 @@ Now that we understand this, we can **run our command**:
 ssh -i "/path/to/private/key/file" username@domain
 ```
 
-If you don't see a scary all-caps error that says `"REJECTED: INCORRECT PERMISSIONS SET FOR PRIVATE KEY FILE`", you can jump to the next step. However, some students are getting an error that says essentially `"REJECTED: INCORRECT PERMISSIONS SET FOR PRIVATE KEY FILE`". If you see this all-caps error, you can fix it by doing the following:
+If you don't see a scary all-caps error that looks like the following:
+
+```bash
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions for 'id_rsa' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "id_rsa": bad permissions
+ubuntu@192.168.0.1: Permission denied (publickey).
+```
+
+then you can jump to the next step. However, some students are getting this error. If you see this, you can fix it by doing the following:
 
 ::: {.callout-note title="Fixing the `INCORRECT PRIVATE KEY PERMISSIONS` Error"}
 
-If you see an error that looks like `"INCORRECT PRIVATE KEY PERMISSIONS"`, all in caps, this means that when you downloaded you private key from the browser (Chrome, Firefox, etc.), it set the permissions on this file to be the "standard" permissions for any downloaded file, which is **not** what we want for the private key file, since this is an extremely important file that we want to keep secured. So, we'll have the **change the permissions** on this file to be as secure as possible while still allowing us to use it in the terminal.
+If you see an error that looks like the above, with `WARNING: UNPROTECTED PRIVATE KEY FILE!` all in caps, this means that when you downloaded you private key from the browser (Chrome, Firefox, etc.), it set the permissions on this file to be the "standard" permissions for any downloaded file, which is **not** what we want for the private key file, since this is an extremely important file that we want to keep secured. So, we'll have the **change the permissions** on this file to be as secure as possible while still allowing us to use it in the terminal.
 
 So, open up a **new** terminal window. Using the `cd` command (along with `pwd` to see what your current working directory is), navigate to the location where your `id_rsa` file is stored. Once you have arrived at that path (you can tell by running `ls` and seeing if `id_rsa` is one of the files listed in the directory), you can use the following command to change the permissions on the `id_rsa` file to the required settings for ssh access:
 
@@ -181,7 +194,7 @@ This should print out a detailed listing of information on the `id_rsa` file, an
 
 ### Step 2.4: Entering the SSH Key Passphrase
 
-If you did **not** encounter this `"INCORRECT PERMISSION"` error, or if you encountered it but fixed it by changing the permissions on the `id_rsa` file and re-running the previous command (the `ssh` command), then the terminal should now be asking you for a **passphrase** for your **SSH private key**. In my case, this looks like:
+If you did **not** encounter this `WARNING: UNPROTECTED PRIVATE KEY FILE` error, or if you encountered it but fixed it by changing the permissions on the `id_rsa` file and re-running the previous command (the `ssh` command), then the terminal should now be asking you for a **passphrase** for your **SSH private key**. In my case, this looks like:
 
 ```bash
 
@@ -284,6 +297,33 @@ You should now see something that looks like the following:
 
 You should **take a screenshot** of this path, or **write it down**, or remember it some other way. Because, this is the **remote path** (the path on the remote server) that you'll want to copy your **local files** to, when we ask you e.g. to copy your `_site` directory to your Georgetown Domains server.
 
+## Step 2.7: Exiting the SSH Session and Returning to Your Local Computer
+
+Now that you know how to connect to a remote server using `ssh`, you'll have to be a bit more vigilant about noticing **which computer you're working on** when you are typing and running commands in the terminal. As mentioned above, if you see a terminal prompt that looks like the following
+
+```bash
+[jpjgeorg@gtown3 ~]$
+```
+
+Then this terminal is probably **connected to your Georgetown Domains server**, meaning that any commands you enter will be **run on the Georgetown Domains server**. If instead you see a terminal prompt that looks like
+
+```bash
+jpj@GSAS-AL-06LVHQQ ~ %
+```
+
+That means you are safely back on your local machine, so that the commands you enter will be **run locally**, on the processor of your laptop. Since we just finished an SSH session, however, we are probably **still logged in to the Georgetown Domains server**. So, to **exit** this session and return back to executing commands on your local machine, just enter and execute the `exit` command:
+
+```bash
+exit
+```
+
+If successful, it should show output like the following:
+
+```bash
+logout
+Connection to jpj.georgetown.domains closed.
+```
+
 ## Step 3: Moving from `ssh` to `scp`
 
 Now that you know how to provide the necessary information and connect to your Georgetown Domains server using the `ssh` command, we'll move to the `scp` command. Basically, while the `ssh` command lets you connect to and **"look around"** inside your server, the `scp` command allows you to **transfer files** to and from your server. The information you need to provide, and the syntax, are very similar, so we're done with the hardest parts!
@@ -304,7 +344,7 @@ scp -i "/Users/jpj/id_rsa"
 
 ### Step 3.2: Providing the Path (Absolute or Relative) to the Local File You'd Like to Copy
 
-Next, I need to give `scp` the **path** to the **file** that I'd like to copy to my Georgetown Domains server. Note that here we're starting with **file copying** rather than **folder copying**, which I **strongly recommend** so that you can check whether the syntax of your `scp` command is correct before trying to copy a ton of files. Specifically, I recommend just making a **test file** called `hello.txt`, and seeing if you can successfully use `scp` to copy this file from your local drive to your Georgetown Domains server. To create a fake file like this very quickly, you can run the following commands in your terminal:
+Next, I need to give `scp` the **path** to the **file** that I'd like to copy to my Georgetown Domains server. Note that here we're starting with **file copying** rather than **folder copying**, which I **strongly recommend** so that you can check whether the syntax of your `scp` command is correct before trying to copy a ton of files. Specifically, I recommend just making a **test file** called `hello.txt`, and seeing if you can successfully use `scp` to copy this file from your local drive to your Georgetown Domains server. To create a fake file like this very quickly, you can open a **new terminal window** and run the following commands:
 
 ```bash
 touch hello.txt
@@ -345,3 +385,18 @@ There are two ways you could check that this copy worked. The first, and safer w
 
 However, since `public_html` is a special directory, that is **publicly-available**, we could also check that `hello.txt` transferred correctly by opening our **browser** and typing our domain followed by `/hello.txt`. So, in my case for example, you or I or anyone else could open [https://jpj.georgetown.domains/hello.txt](https://jpj.georgetown.domains/hello.txt){target="_blank"}, and check to see that it indeed shows the content `Hello world!`. If your domain also shows this, when you go to (for example) `dsanstudent.georgetown.domains`, then you know that the transfer was a success!
 
+### Step 3.7: Copying Entire *Folders* Instead Of Just One File
+
+There is only one more change you need to make to the `scp` command from above (the command which copied a file), to make it copy an entire **folder** rather than just one file. If you add an additional `-r` flag to the **very beginning** of your `ssh` command, **before** the `-i` flag, you are instructing `ssh` that it should copy the local path that you provide **recursively**. Meaning: if you now provide a path to a **folder** as the argument to `ssh` immediately after the path to your private key file (rather than a path to a **file** like we entered before), `ssh` will now recursiviely copy the folder and all of its contents to the specified remote directory.
+
+So for example, if I had a folder called `mysite` within my home directory `/home/jpj/` on my local drive, then I could modify the previous `scp` command as follows, to copy this **folder** to my Georgetown Domains server:
+
+```bash
+scp -r -i "/path/to/my/key/file" "/Users/jpj/mysite" jpjgeorg@jpj.georgetown.domains:/home/jpjgeorg/public_html
+```
+
+This command, once executed, should now show a series of messages, indicating the progress/completion of each file within the `mysite` folder, as it copies them one-by-one into the `/home/jpjgeorg/public_html/mysite` folder on my remote machine.
+
+Once this command completes, you can again check that the copy was successful in one of two ways: either (a) by using `ssh` to log into the server, then using `cd` and `ls` to move to the `public_html` folder and check its contents, or (b) opening your browser and checking (in my case) [https://jpj.georgetown.domains/mysite](https://jpj.georgetown.domains/mysite){target="_blank"}.
+
+As one final thing to notice: unlike in the case of `ssh`, we don't need to use `exit` to leave an `scp` "session". That is because, `scp` **immediately exits** from the remote server once the files have been copied. So, immediately after the `scp` command completes, you are still on your local computer, and commands that you enter and execute are still run locally (when in doubt, look for the terminal prompt! If it looks like `[jpjgeorg@gtown3 ~]$`, that means you still need to `exit` from the Georgetown Domains server back to your local machine.)
