@@ -161,3 +161,127 @@ Lorem ipsum dolor sit amet consectetur adipiscing. Tortor pretium viverra suspen
 
 If you think this second version looks nicer than the first, and shows more clearly how the headers **separate out** different pieces of content, you can use this "lorem ipsum" text as filler (until you replace it with your own original writing!).
 
+## Component-6
+
+### Linking to the Slideshow From Your Main Page
+
+In Component-6, the assignment asks you to create a slideshow, with the first two steps being:
+
+1. Create a `slides` subfolder, within `simple_quarto_website`
+2. Create a file within the `slides` subfolder called `slides.ipynb`
+
+And then it asks you to modify the `yaml`-format metadata block---this is the block of specially-formatted key-value pairs at the **top** of the **first cell** within the `slides.ipynb` file, that looks like the following (for example):
+
+```yaml
+---
+title: "My Slideshow"
+---
+```
+
+To specify to **Quarto** that you'd like it to **render** this `slides.ipynb` file specifically as a **Reveal.js slideshow**, you'll need to add the following additional key-value pair to this metadata block (which, again, should be at the top of the first cell within `slides.ipynb`):
+
+```yaml
+format: revealjs
+```
+
+Meaning that, if your original metadata block just had the title, like in the example above, now it will have two pieces of information for Quarto:
+
+```yaml
+---
+title: "My Slideshow"
+format: revealjs
+---
+```
+
+Once you've specified this format, though, it is still a bit tricky to **preview** the slideshow (to make sure that modifications you make are actually appearing in the slideshow, for example), since the Quarto extension for VSCode does **not** provide a nice "Render" button for `.ipynb`-format files like it does for `.qmd`-format files.
+
+So, you can make your life slightly easier by **adding a link to the slideshow** from your website's **main** navigation bar. To do that, you'll need to modify your website's `_quarto.yml` file, which contains the global settings for the website. If you open this file at this point in the project, it should look something like:
+
+```yml {filename="_quarto.yml"}
+project:
+  type: website
+
+website:
+  title: "simple_quarto_website"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.ipynb
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+```
+
+Notice the portion within the value of `website` (the indented portions under `website:`) with the key `navbar`, and within that value, the key `left`. Every bullet point underneath this `left` key will correspond to a **link** on the **top navbar** of your website, where the `left` key indicates that these links will be **left-aligned** (you could add a new key `right:`, and some links underneath that key, and those links would be right-aligned on the top navbar).
+
+So, to add a link to the slideshow you are creating in `slides/slides.ipynb`, we'll need to modify two things in this `_quarto.yml` file. First, since Quarto will sometimes complain and/or get confused if some links have `href` and `text` tags while others do not have this tag, let's change the link that just contains `about.ipynb` to have an `href` and `label`, like:
+
+```yaml
+- href: about.ipynb
+  text: About
+```
+
+The YAML format requires that elements of a list (like the list of left-aligned links under the `left` key) line up in terms of indentation, so make sure that the full `_quarto.yml` file now looks something like:
+
+```yml {filename="_quarto.yml"}
+project:
+  type: website
+
+website:
+  title: "simple_quarto_website"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.ipynb
+        text: About
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+```
+
+Now we should be able to add another, third link to this list, allowing us to go directly to the slideshow we're making in `slides/slides.ipynb`. To do this, add a new element to the `left` list by adding another "bullet point" (another `-` character), then set the `href` value to be exactly that path (`slides/slides.ipynb`) and the `text` value to be "My Slides" (or, any title you'd like). Your `_quarto.yml` file should now look something like:
+
+```yml {filename="_quarto.yml"}
+project:
+  type: website
+
+website:
+  title: "simple_quarto_website"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.ipynb
+        text: About
+      - href: slides/slides.ipynb
+        text: Slides
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+```
+
+and now when you **preview your website** by running the `quarto preview` command in the **terminal** (from within the root directory of your website, which should be named `simple_quarto_website`), you should see three links in the top navbar: one to "Home", one to the "About" page, and a third to "Slides".
+
+Now, when you actually **click** the "Slides" link, it may not show anything, or it may show a bunch of non-human-readable raw code (which is actually the `.json` structure underlying a `.ipynb` file). This, however, is a separate issue, that you'll need to tackle: how to get Quarto to know that it should show the **Reveal.js presentation** as the **rendered form** of the `slides/slides.ipynb` file. And that is part of the challenge of the assignment. As a hint, though, you should break it down into steps, to check exactly **where** this rendering is going wrong (if the slideshow doesn't render as intended when you click the new "Slides" link):
+
+1. If you run the `quarto preview` command from **within** the `slides` folder (rather than the **root** folder of your website, `simple_quarto_website`), does it display correctly as a slideshow?
+2. Is the **first cell** in your `slides.ipynb` file in the correct format for containing file metadata? (File metadata can only be entered in "raw" or "markdown" cell types. If the first cell is, for example, a "Python" cell type, Quarto will be unable to read your metadata block, as it will think it's Python code rather than YAML code).
+3. Does the **file metadata** actually **exist in a block** at the top of the first cell? As mentioned above, the top of the first cell in your `.ipynb` file (which should be a "raw" or "markdown" type cell) should look something like
+
+```yaml
+---
+title: "Slides"
+format: revealjs
+---
+```
+
+If you don't see text that looks like this at the top of the first cell in your `slides.ipynb` file, please add it and try to preview the file again (both from the root folder of your website and, for debugging purposes, also from the `slides` subfolder, as mentioned in step #1 above)
+
