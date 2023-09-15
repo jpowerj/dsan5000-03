@@ -357,7 +357,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now that we understand this, we can <strong>run our command</strong>:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-i</span> <span class="st">"/path/to/private/key/file"</span> username@domain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you don’t see a scary all-caps error that says <code>"REJECTED: INCORRECT PERMISSIONS SET FOR PRIVATE KEY FILE</code>“, you can jump to the next step. However, some students are getting an error that says essentially <code>"REJECTED: INCORRECT PERMISSIONS SET FOR PRIVATE KEY FILE</code>”. If you see this all-caps error, you can fix it by doing the following:</p>
-<p>::: {.callout-note title=“Fixing the <code>"INCORRECT PRIVATE KEY PERMISSIONS</code> Error”}</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Fixing the `INCORRECT PRIVATE KEY PERMISSIONS` Error">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fixing the <code>INCORRECT PRIVATE KEY PERMISSIONS</code> Error
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If you see an error that looks like <code>"INCORRECT PRIVATE KEY PERMISSIONS"</code>, all in caps, this means that when you downloaded you private key from the browser (Chrome, Firefox, etc.), it set the permissions on this file to be the “standard” permissions for any downloaded file, which is <strong>not</strong> what we want for the private key file, since this is an extremely important file that we want to keep secured. So, we’ll have the <strong>change the permissions</strong> on this file to be as secure as possible while still allowing us to use it in the terminal.</p>
 <p>So, open up a <strong>new</strong> terminal window. Using the <code>cd</code> command (along with <code>pwd</code> to see what your current working directory is), navigate to the location where your <code>id_rsa</code> file is stored. Once you have arrived at that path (you can tell by running <code>ls</code> and seeing if <code>id_rsa</code> is one of the files listed in the directory), you can use the following command to change the permissions on the <code>id_rsa</code> file to the required settings for ssh access:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 600 id_rsa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -367,7 +376,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-------@</span> 1 jpj  staff   1.7K Jun  9 23:40 id_rsa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>(Your computer should show your own username rather than <code>jpj</code>, and some usergroup besides <code>staff</code>, but the permissions string should look similar to the string all the way on the left of the above output: the <code>-rw-------@</code> portion)</p>
-<p>:::</p>
+</div>
+</div>
 </section>
 <section id="step-2.4-entering-the-ssh-key-passphrase" class="level3">
 <h3 class="anchored" data-anchor-id="step-2.4-entering-the-ssh-key-passphrase">Step 2.4: Entering the SSH Key Passphrase</h3>

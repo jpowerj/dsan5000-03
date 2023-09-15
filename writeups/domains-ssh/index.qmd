@@ -151,7 +151,7 @@ ssh -i "/path/to/private/key/file" username@domain
 
 If you don't see a scary all-caps error that says `"REJECTED: INCORRECT PERMISSIONS SET FOR PRIVATE KEY FILE`", you can jump to the next step. However, some students are getting an error that says essentially `"REJECTED: INCORRECT PERMISSIONS SET FOR PRIVATE KEY FILE`". If you see this all-caps error, you can fix it by doing the following:
 
-::: {.callout-note title="Fixing the `"INCORRECT PRIVATE KEY PERMISSIONS` Error"}
+::: {.callout-note title="Fixing the `INCORRECT PRIVATE KEY PERMISSIONS` Error"}
 
 If you see an error that looks like `"INCORRECT PRIVATE KEY PERMISSIONS"`, all in caps, this means that when you downloaded you private key from the browser (Chrome, Firefox, etc.), it set the permissions on this file to be the "standard" permissions for any downloaded file, which is **not** what we want for the private key file, since this is an extremely important file that we want to keep secured. So, we'll have the **change the permissions** on this file to be as secure as possible while still allowing us to use it in the terminal.
 
