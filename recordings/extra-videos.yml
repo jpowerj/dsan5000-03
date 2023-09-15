@@ -1,5 +1,10 @@
 - week: 3
   section: ""
+  title: "<a href='./recording-w03-ssh-windows.html'>Windows: SSH and SCP on Georgetown Domains</a>"
+  date: 2023-09-15
+  categories: ["Extra Videos"]
+- week: 3
+  section: ""
   title: "<a href='https://georgetown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4e420b75-13a6-4473-bc2f-b07e006220f8' target='_blank'>Quarto Websites</a>"
   date: 2023-09-14
   categories: ["Extra Videos"]
