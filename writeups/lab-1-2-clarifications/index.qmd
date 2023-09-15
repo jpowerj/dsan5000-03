@@ -13,7 +13,48 @@ categories:
 
 :::
 
-## Component-3: Multiple Versions of the About Page
+## Component-3
+
+### Creating a Quarto Website in VSCode
+
+The beginning of the Component-3 description states that you should:
+
+* Make sure the Quarto extension is installed in VS-Code.
+* Using VS-Code –> New file –> “Quarto project” –> create a blank Quarto “Website” project in your 5000-lab-1.2 repo call simple_quarto_website
+
+To clarify this portion: you can install the Quarto extension for VSCode by clicking on the "Extensions" panel on the left side of the VSCode interface (or pressing `Cmd`+`Shift`+`X`) and searching for "Quarto" in the extensions search box. The Quarto extension should be the first result:
+
+![](images/quarto-extension.jpeg)
+
+Once you have this extension installed, there is a bit of a typo in the assignment description about how to create a Quarto **project** (specifically, a **website** project) within VSCode.
+
+Rather than using VS-Code->New file->"Quarto project", in the most recent version of the Quarto extension you should instead do the following:
+
+1. Use the keyboard shortcut {{< kbd Shift-Cmd-P >}} ({{< kbd Shift-Ctrl-P >}} on Windows) to open what's called the **Command Palette** in VSCode. It is a box with a text field in it that should pop up near the top of your screen:
+
+![](images/command-palette.jpeg)
+
+2. Within this Command Palette, start typing the word "Quarto". As you type, it should filter out the irrelevant commands and just show the **Quarto-related** commands.
+3. The first command in the list should now be **Quarto: Create Project**:
+
+![](images/create-project.jpeg)
+
+4. Click this command, to begin the process of creating a Quarto project
+5. Choose "Quarto Website" on the next screen:
+
+![](images/website-project.jpeg)
+
+6. Choose the folder on your computer where you would like Quarto to create the website (for the lab, for example, you could create a folder called `simple_quarto_website`, and tell Quarto that you'd like to create the website within that folder):
+
+![](images/choose-directory.jpeg)
+
+7. VSCode will now create the website and display the created files "_quarto.yml", "index.qmd", "about.qmd", and "style.css" in the "Explorer" pane on the left side of the VSCode interface:
+
+![](images/quarto-website-vscode.jpeg)
+
+You should now be able to proceed with the lab, by modifying and adding files to this newly-created Quarto website project.
+
+### Multiple Versions of the About Page
 
 There is a step in Component-3 which asks you to:
 

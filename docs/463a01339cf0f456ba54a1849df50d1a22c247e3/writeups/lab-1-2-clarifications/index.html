@@ -73,6 +73,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/kbd/kbd.js"></script>
+<link href="../../site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -213,8 +215,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#component-3-multiple-versions-of-the-about-page" id="toc-component-3-multiple-versions-of-the-about-page" class="nav-link active" data-scroll-target="#component-3-multiple-versions-of-the-about-page">Component-3: Multiple Versions of the About Page</a>
+  <li><a href="#component-3" id="toc-component-3" class="nav-link active" data-scroll-target="#component-3">Component-3</a>
   <ul class="collapse">
+  <li><a href="#creating-a-quarto-website-in-vscode" id="toc-creating-a-quarto-website-in-vscode" class="nav-link" data-scroll-target="#creating-a-quarto-website-in-vscode">Creating a Quarto Website in VSCode</a></li>
+  <li><a href="#multiple-versions-of-the-about-page" id="toc-multiple-versions-of-the-about-page" class="nav-link" data-scroll-target="#multiple-versions-of-the-about-page">Multiple Versions of the About Page</a></li>
   <li><a href="#making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml" id="toc-making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml" class="nav-link" data-scroll-target="#making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml">Making sure you have added both <code>href</code> and <code>text</code> data when updating <code>_quarto.yml</code></a></li>
   <li><a href="#specifying-the-output-format-for-about.ipynb" id="toc-specifying-the-output-format-for-about.ipynb" class="nav-link" data-scroll-target="#specifying-the-output-format-for-about.ipynb">Specifying the output format for <code>about.ipynb</code></a></li>
   <li><a href="#removing-the-about.qmd-file" id="toc-removing-the-about.qmd-file" class="nav-link" data-scroll-target="#removing-the-about.qmd-file">Removing the <code>about.qmd</code> file</a></li>
@@ -246,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Friday Sep 15, 2023, 00:32:12</p>
+      <p class="date">Friday Sep 15, 2023, 16:25:14</p>
     </div>
   </div>
   
@@ -269,8 +273,45 @@ Links
 <p><a href="https://jfh.georgetown.domains/dsan5000/slides-and-labs/_site/content/labs/assignments/lab-1.2/assignment.html" target="_blank">Lab 1.2 Link</a></p>
 </div>
 </div>
-<section id="component-3-multiple-versions-of-the-about-page" class="level2">
-<h2 class="anchored" data-anchor-id="component-3-multiple-versions-of-the-about-page">Component-3: Multiple Versions of the About Page</h2>
+<section id="component-3" class="level2">
+<h2 class="anchored" data-anchor-id="component-3">Component-3</h2>
+<section id="creating-a-quarto-website-in-vscode" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-quarto-website-in-vscode">Creating a Quarto Website in VSCode</h3>
+<p>The beginning of the Component-3 description states that you should:</p>
+<ul>
+<li>Make sure the Quarto extension is installed in VS-Code.</li>
+<li>Using VS-Code –&gt; New file –&gt; “Quarto project” –&gt; create a blank Quarto “Website” project in your 5000-lab-1.2 repo call simple_quarto_website</li>
+</ul>
+<p>To clarify this portion: you can install the Quarto extension for VSCode by clicking on the “Extensions” panel on the left side of the VSCode interface (or pressing <code>Cmd</code>+<code>Shift</code>+<code>X</code>) and searching for “Quarto” in the extensions search box. The Quarto extension should be the first result:</p>
+<p><img src="images/quarto-extension.jpeg" class="img-fluid"></p>
+<p>Once you have this extension installed, there is a bit of a typo in the assignment description about how to create a Quarto <strong>project</strong> (specifically, a <strong>website</strong> project) within VSCode.</p>
+<p>Rather than using VS-Code-&gt;New file-&gt;“Quarto project”, in the most recent version of the Quarto extension you should instead do the following:</p>
+<ol type="1">
+<li>Use the keyboard shortcut <kbd>Shift-Cmd-P</kbd> (<kbd>Shift-Ctrl-P</kbd> on Windows) to open what’s called the <strong>Command Palette</strong> in VSCode. It is a box with a text field in it that should pop up near the top of your screen:</li>
+</ol>
+<p><img src="images/command-palette.jpeg" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Within this Command Palette, start typing the word “Quarto”. As you type, it should filter out the irrelevant commands and just show the <strong>Quarto-related</strong> commands.</li>
+<li>The first command in the list should now be <strong>Quarto: Create Project</strong>:</li>
+</ol>
+<p><img src="images/create-project.jpeg" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Click this command, to begin the process of creating a Quarto project</li>
+<li>Choose “Quarto Website” on the next screen:</li>
+</ol>
+<p><img src="images/website-project.jpeg" class="img-fluid"></p>
+<ol start="6" type="1">
+<li>Choose the folder on your computer where you would like Quarto to create the website (for the lab, for example, you could create a folder called <code>simple_quarto_website</code>, and tell Quarto that you’d like to create the website within that folder):</li>
+</ol>
+<p><img src="images/choose-directory.jpeg" class="img-fluid"></p>
+<ol start="7" type="1">
+<li>VSCode will now create the website and display the created files “_quarto.yml”, “index.qmd”, “about.qmd”, and “style.css” in the “Explorer” pane on the left side of the VSCode interface:</li>
+</ol>
+<p><img src="images/quarto-website-vscode.jpeg" class="img-fluid"></p>
+<p>You should now be able to proceed with the lab, by modifying and adding files to this newly-created Quarto website project.</p>
+</section>
+<section id="multiple-versions-of-the-about-page" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-versions-of-the-about-page">Multiple Versions of the About Page</h3>
 <p>There is a step in Component-3 which asks you to:</p>
 <ul>
 <li>Convert <code>about.qmd</code> to <code>about.ipynb</code> with <code>quarto convert about.qmd</code>.</li>
@@ -280,6 +321,7 @@ Links
 <li>modify <code>_quarto.yml</code> accordingly <code>- about.qmd</code> -&gt; <code>about.ipynb</code></li>
 </ul>
 <p>Please note the following points about these two steps:</p>
+</section>
 <section id="making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml" class="level3">
 <h3 class="anchored" data-anchor-id="making-sure-you-have-added-both-href-and-text-data-when-updating-_quarto.yml">Making sure you have added both <code>href</code> and <code>text</code> data when updating <code>_quarto.yml</code></h3>
 <ul>
